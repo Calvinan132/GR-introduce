@@ -1,11 +1,10 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
+import { Navbar, Footer } from "./component";
+import { useState } from "react";
 import {
   Users,
   Target,
   FileText,
-  Calendar,
   Layout,
   Video,
   ClipboardList,
@@ -14,8 +13,6 @@ import {
   CheckCircle2,
   ChevronRight,
   Mail,
-  Sun,
-  Moon,
 } from "lucide-react";
 
 const GreenTeamPage = () => {
@@ -68,49 +65,7 @@ const GreenTeamPage = () => {
   return (
     <div className={`${isDarkMode ? "dark" : ""}`}>
       <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#02140f] text-[#111827] dark:text-gray-100 font-sans transition-colors duration-300">
-        {/* NAVIGATION */}
-        <nav className="bg-[#064E3B] dark:bg-[#011a14] text-white sticky top-0 z-50 shadow-md border-b border-[#10B981]/20">
-          <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-[#FBBF24] rounded-lg flex items-center justify-center">
-                <Users size={20} className="text-[#064E3B]" />
-              </div>
-              <span className="font-black text-xl tracking-tighter">
-                GREEN<span className="text-[#FBBF24]">5</span>
-              </span>
-            </div>
-
-            <div className="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wide">
-              <a href="#team" className="hover:text-[#FBBF24] transition">
-                Thành viên
-              </a>
-              <a href="#management" className="hover:text-[#FBBF24] transition">
-                Quản lý
-              </a>
-              <a href="#product" className="hover:text-[#FBBF24] transition">
-                Sản phẩm
-              </a>
-            </div>
-
-            <div className="flex items-center gap-4">
-              {/* DARK MODE TOGGLE */}
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 rounded-full bg-[#10B981]/20 hover:bg-[#10B981]/40 transition-colors"
-              >
-                {isDarkMode ? (
-                  <Sun size={20} className="text-[#FBBF24]" />
-                ) : (
-                  <Moon size={20} className="text-white" />
-                )}
-              </button>
-              <button className="bg-[#FBBF24] text-[#064E3B] px-5 py-2 rounded-full text-xs font-bold transition-all shadow-lg hover:scale-105">
-                BACKLOG
-              </button>
-            </div>
-          </div>
-        </nav>
-
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         {/* HERO SECTION */}
         <header
           id="intro"
@@ -152,7 +107,7 @@ const GreenTeamPage = () => {
               {teamMembers.map((member) => (
                 <div key={member.id} className="group">
                   <div
-                    className={`h-32 rounded-2xl bg-gradient-to-br ${member.color} mb-4 relative overflow-hidden shadow-inner`}
+                    className={`h-32 rounded-2xl bg-gradient-to-br${member.color} mb-4 relative overflow-hidden shadow-inner`}
                   >
                     <div className="absolute inset-0 opacity-20 group-hover:scale-110 transition-transform duration-500">
                       <Users className="absolute -bottom-4 -right-4 w-24 h-24" />
@@ -331,33 +286,7 @@ const GreenTeamPage = () => {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="bg-[#064E3B] dark:bg-[#000000] text-white py-12 px-4 transition-colors">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-6 h-6 bg-[#FBBF24] rounded flex items-center justify-center text-[#064E3B] text-[10px] font-bold">
-                  5
-                </div>
-                <span className="font-bold tracking-tighter">GREENTEAM</span>
-              </div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
-                Software Project Management 2024
-              </p>
-            </div>
-            <div className="flex gap-8 text-[10px] font-bold text-gray-400">
-              <a href="#" className="hover:text-[#FBBF24]">
-                GITHUB
-              </a>
-              <a href="#" className="hover:text-[#FBBF24]">
-                JIRA
-              </a>
-              <a href="#" className="hover:text-[#FBBF24]">
-                DOCUMENTATION
-              </a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

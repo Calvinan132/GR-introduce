@@ -1,4 +1,12 @@
-export default function Navbar() {
+import { Users, Sun, Moon } from "lucide-react";
+
+export default function Navbar({
+  isDarkMode,
+  toggleDarkMode,
+}: {
+  isDarkMode: boolean;
+  toggleDarkMode: () => void;
+}) {
   return (
     <>
       <nav className="bg-[#064E3B] dark:bg-[#011a14] text-white sticky top-0 z-50 shadow-md border-b border-[#10B981]/20">
