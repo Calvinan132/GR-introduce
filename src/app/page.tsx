@@ -1,6 +1,6 @@
 "use client";
-import { Navbar, Footer } from "./component";
-import { useState } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   Users,
   Target,
@@ -13,62 +13,42 @@ import {
   CheckCircle2,
   ChevronRight,
   Mail,
+  X,
 } from "lucide-react";
+import teamMembers from "./data/teamMembers.json";
 
-const GreenTeamPage = () => {
+const GreenTeamContent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeTab, setActiveTab] = useState("tiendo");
+  const [selectedMember, setSelectedMember] = useState<(typeof teamMembers)[0] | null>(null);
+
+  const searchParams = useSearchParams();
+  const section = searchParams.get("section");
+
+  const teamRef = useRef<HTMLElement>(null);
+  const managementRef = useRef<HTMLElement>(null);
+  const productRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (section === "team" && teamRef.current) {
+      teamRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "management" && managementRef.current) {
+      managementRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "product" && productRef.current) {
+      productRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [section]);
 
   // Hàm chuyển đổi Dark Mode
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Nguyễn Văn A",
-      role: "Leader / Project Manager",
-      desc: "Điều phối dự án, quản lý phạm vi và tiến độ tuần.",
-      color: "from-[#064E3B] to-[#10B981]",
-    },
-    {
-      id: 2,
-      name: "Trần Thị B",
-      role: "UI/UX Designer",
-      desc: "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
-      color: "from-[#10B981] to-[#059669]",
-    },
-    {
-      id: 3,
-      name: "Lê Văn C",
-      role: "Backend Developer",
-      desc: "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
-      color: "from-[#059669] to-[#064E3B]",
-    },
-    {
-      id: 4,
-      name: "Phạm Minh D",
-      role: "Frontend Developer",
-      desc: "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
-      color: "from-[#064E3B] to-[#10B981]",
-    },
-    {
-      id: 5,
-      name: "Hoàng Anh E",
-      role: "Tester / Marketing",
-      desc: "Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.",
-      color: "from-[#10B981] to-[#059669]",
-    },
-  ];
-
   return (
     <div className={`${isDarkMode ? "dark" : ""}`}>
       <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#02140f] text-[#111827] dark:text-gray-100 font-sans transition-colors duration-300">
-        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         {/* HERO SECTION */}
         <header
-          id="intro"
           className="relative bg-[#064E3B] dark:bg-[#011a14] pt-20 pb-32 px-4 overflow-hidden"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#10B981] opacity-10 rounded-full -mr-20 -mt-20"></div>
@@ -96,7 +76,7 @@ const GreenTeamPage = () => {
 
         {/* TEAM SECTION */}
         <section
-          id="team"
+          ref={teamRef}
           className="max-w-7xl mx-auto px-4 -mt-16 relative z-20"
         >
           <div className="bg-white dark:bg-[#062d24] p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-white/5 transition-colors">
@@ -105,32 +85,53 @@ const GreenTeamPage = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {teamMembers.map((member) => (
-                <div key={member.id} className="group">
+                <div
+                  key={member.id}
+                  className="group cursor-pointer hover:-translate-y-1 transition-all duration-300"
+                  onClick={() => setSelectedMember(member)}
+                >
+                  {/* Container chứa ảnh */}
                   <div
-                    className={`h-32 rounded-2xl bg-gradient-to-br${member.color} mb-4 relative overflow-hidden shadow-inner`}
+                    className={`h-48 rounded-2xl bg-gradient-to-br ${member.color} mb-4 relative overflow-hidden shadow-lg`}
                   >
-                    <div className="absolute inset-0 opacity-20 group-hover:scale-110 transition-transform duration-500">
-                      <Users className="absolute -bottom-4 -right-4 w-24 h-24" />
+                    {/* Lớp phủ họa tiết icon ẩn bên dưới */}
+                    <Users className="absolute -bottom-2 -left-2 w-20 h-20 text-white/10" />
+
+                    {/* Ảnh thành viên - Đã sửa lỗi hiển thị */}
+                    <div className="absolute inset-0 flex items-center justify-center p-2">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                        // Dự phòng nếu ảnh lỗi thì hiện icon
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = "https://ui-avatars.com/api/?name=" + member.name;
+                        }}
+                      />
+                    </div>
+
+                    {/* Hiệu ứng overlay khi hover */}
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-white text-xs font-bold bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">
+                        Xem chi tiết
+                      </span>
                     </div>
                   </div>
+
+                  {/* Thông tin bên dưới */}
                   <h4 className="font-bold text-[#064E3B] dark:text-white text-lg">
                     {member.name}
                   </h4>
                   <p className="text-[#10B981] dark:text-[#FBBF24] text-[10px] font-black uppercase tracking-widest mb-2">
                     {member.role}
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed mb-4">
+                  <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed mb-4 line-clamp-2">
                     {member.desc}
                   </p>
-                  <div className="flex gap-3 text-gray-400">
-                    <Github
-                      size={16}
-                      className="cursor-pointer hover:text-[#10B981]"
-                    />
-                    <Mail
-                      size={16}
-                      className="cursor-pointer hover:text-[#10B981]"
-                    />
+
+                  <div className="flex gap-3 text-gray-400 group-hover:text-[#10B981] transition-colors">
+                    <Github size={16} className="cursor-pointer hover:scale-110 transition" />
+                    <Mail size={16} className="cursor-pointer hover:scale-110 transition" />
                   </div>
                 </div>
               ))}
@@ -139,7 +140,7 @@ const GreenTeamPage = () => {
         </section>
 
         {/* PROGRESS & MANAGEMENT */}
-        <main id="management" className="max-w-7xl mx-auto px-4 py-24">
+        <main ref={managementRef} className="max-w-7xl mx-auto px-4 py-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 space-y-8">
               <h3 className="text-2xl font-bold text-[#064E3B] dark:text-[#10B981]">
@@ -238,7 +239,7 @@ const GreenTeamPage = () => {
 
         {/* PRODUCT & PROMOTION */}
         <section
-          id="product"
+          ref={productRef}
           className="bg-white dark:bg-[#011a14] py-24 transition-colors"
         >
           <div className="max-w-7xl mx-auto px-4">
@@ -285,10 +286,79 @@ const GreenTeamPage = () => {
             </div>
           </div>
         </section>
-
-        <Footer />
       </div>
+
+      {/* MEMBER MODAL */}
+      {selectedMember && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in"
+          onClick={() => setSelectedMember(null)}
+        >
+          <div
+            className="bg-white dark:bg-[#062d24] rounded-3xl p-8 max-w-md w-full relative shadow-2xl border border-gray-100 dark:border-white/10 transform transition-all duration-300 animate-in slide-in-from-bottom-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Nút đóng */}
+            <button
+              onClick={() => setSelectedMember(null)}
+              className="absolute top-5 right-5 p-2 z-10 rounded-full bg-white/60 dark:bg-black/40 text-gray-500 dark:text-gray-300 hover:bg-white dark:hover:bg-black/70 hover:scale-110 transition shadow-sm"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Container chứa ảnh - Đã sửa lỗi hiển thị */}
+            <div
+              className={`w-32 h-32 rounded-3xl bg-gradient-to-br ${selectedMember.color} mb-6 relative overflow-hidden shadow-2xl mx-auto border-4 border-white dark:border-[#062d24] -mt-20`}
+            >
+              <img
+                src={selectedMember.image}
+                alt={selectedMember.name}
+                className="w-full h-full object-cover rounded-2xl scale-100 hover:scale-105 transition-transform duration-500"
+                // Dự phòng nếu ảnh lỗi thì hiện icon
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src =
+                    "https://ui-avatars.com/api/?name=" +
+                    selectedMember.name +
+                    "&size=128";
+                }}
+              />
+            </div>
+
+            {/* Thông tin thành viên */}
+            <h3 className="text-2xl font-bold text-center text-[#064E3B] dark:text-white mb-1">
+              {selectedMember.name}
+            </h3>
+            <p className="text-[#10B981] dark:text-[#FBBF24] text-center text-xs font-black uppercase tracking-widest mb-6">
+              {selectedMember.role}
+            </p>
+
+            <div className="bg-gray-50 dark:bg-[#04211a] p-5 rounded-2xl border border-gray-100 dark:border-white/5 mb-8">
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed text-center">
+                {selectedMember.desc}
+              </p>
+            </div>
+
+            {/* Các nút hành động */}
+            <div className="flex justify-center gap-4">
+              <button className="flex items-center gap-2 px-6 py-2 rounded-full bg-[#064E3B] text-white hover:bg-[#043b2c] transition hover:scale-105 font-semibold text-sm shadow-md">
+                <Mail size={16} /> Liên hệ
+              </button>
+              <button className="flex items-center gap-2 px-6 py-2 rounded-full border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-white/5 transition hover:scale-105 font-semibold text-sm">
+                <Github size={16} /> GitHub
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
+  );
+};
+
+const GreenTeamPage = () => {
+  return (
+    <Suspense fallback={null}>
+      <GreenTeamContent />
+    </Suspense>
   );
 };
 

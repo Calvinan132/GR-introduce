@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Nguyễn Văn A",
+    "role": "Leader / Project Manager",
+    "desc": "Điều phối dự án, quản lý phạm vi và tiến độ tuần.",
+    "color": "from-[#064E3B] to-[#10B981]",
+    "image": "https://imgs.search.brave.com/TxXkyyesEmIP-fANpIk-WO_DcJIXrIXNx2YcX4294eA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92YW52/bi5uZXQvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDYvbWVv/LWxlLWx1b2ktbWVt/ZS5qcGc"
+  },
+  {
+    "id": 2,
+    "name": "Trần Thị B",
+    "role": "UI/UX Designer",
+    "desc": "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
+    "color": "from-[#10B981] to-[#059669]",
+    "image": "https://imgs.search.brave.com/TxXkyyesEmIP-fANpIk-WO_DcJIXrIXNx2YcX4294eA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92YW52/bi5uZXQvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDYvbWVv/LWxlLWx1b2ktbWVt/ZS5qcGc"
+  },
+  {
+    "id": 3,
+    "name": "Lê Văn C",
+    "role": "Backend Developer",
+    "desc": "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
+    "color": "from-[#059669] to-[#064E3B]",
+    "image": "https://imgs.search.brave.com/TxXkyyesEmIP-fANpIk-WO_DcJIXrIXNx2YcX4294eA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92YW52/bi5uZXQvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDYvbWVv/LWxlLWx1b2ktbWVt/ZS5qcGc"
+  },
+  {
+    "id": 4,
+    "name": "Phạm Minh D",
+    "role": "Frontend Developer",
+    "desc": "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
+    "color": "from-[#064E3B] to-[#10B981]",
+    "image": "https://imgs.search.brave.com/TxXkyyesEmIP-fANpIk-WO_DcJIXrIXNx2YcX4294eA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92YW52/bi5uZXQvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDYvbWVv/LWxlLWx1b2ktbWVt/ZS5qcGc"
+  },
+  {
+    "id": 5,
+    "name": "Hoàng Anh E",
+    "role": "Tester / Marketing",
+    "desc": "Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.",
+    "color": "from-[#10B981] to-[#059669]",
+    "image": "https://imgs.search.brave.com/TxXkyyesEmIP-fANpIk-WO_DcJIXrIXNx2YcX4294eA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92YW52/bi5uZXQvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjQvMDYvbWVv/LWxlLWx1b2ktbWVt/ZS5qcGc"
+  }
+]

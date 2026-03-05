@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "week": "Tuần 1",
+    "title": "Khởi động dự án & Lập kế hoạch",
+    "date": "01/03 - 07/03",
+    "status": "completed",
+    "tasks": [
+      "Họp kick-off nhóm",
+      "Phân chia vai trò (Leader, Dev, Designer)",
+      "Xác định phạm vi dự án (Scope)"
+    ]
+  },
+  {
+    "id": 2,
+    "week": "Tuần 2",
+    "title": "Phân tích yêu cầu & UI Design",
+    "date": "08/03 - 14/03",
+    "status": "completed",
+    "tasks": [
+      "Thiết kế Wireframe trên Figma",
+      "Viết User Stories",
+      "Thiết lập Repository trên GitHub"
+    ]
+  },
+  {
+    "id": 3,
+    "week": "Tuần 3",
+    "title": "Phát triển Frontend & Backend cơ bản",
+    "date": "15/03 - 21/03",
+    "status": "in-progress",
+    "tasks": [
+      "Dựng layout React + Tailwind",
+      "Thiết lập API Database",
+      "Code chức năng Login/Auth"
+    ]
+  },
+  {
+    "id": 4,
+    "week": "Tuần 4",
+    "title": "Hoàn thiện & Kiểm thử (Testing)",
+    "date": "22/03 - 28/03",
+    "status": "pending",
+    "tasks": ["Unit Testing", "Fix bug giao diện", "Viết báo cáo cuối kỳ"]
+  }
+]

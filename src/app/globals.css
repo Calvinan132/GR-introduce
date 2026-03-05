@@ -2,8 +2,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 161 94% 30%;
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* Màu xanh của nhóm bạn ở mode tối */
+    --primary: 161 94% 45%;
+  }
 }
 
 @theme inline {
