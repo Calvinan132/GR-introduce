@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import teamMembers from "./data/teamMembers.json";
 import progress from "./data/progress.json";
+import meetingMinutes from "./data/meetingMinutes.json";
 
 const GreenTeamContent = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -294,21 +295,27 @@ const GreenTeamContent = () => {
               </div>
 
               <div className="bg-white dark:bg-[#062d24] p-6 rounded-3xl border border-gray-100 dark:border-white/5 shadow-sm">
-                <h4 className="font-bold text-sm mb-4 flex items-center gap-2 dark:text-white">
-                  <ClipboardList size={16} className="text-[#10B981]" /> Biên
-                  bản họp nhóm
-                </h4>
+                <div className="flex items-center justify-between mb-4">
+                  <h4 className="font-bold text-sm flex items-center gap-2 dark:text-white">
+                    <ClipboardList size={16} className="text-[#10B981]" /> Biên
+                    bản họp nhóm
+                  </h4>
+                  <Link href="/meeting-minutes" className="text-xs text-[#10B981] hover:underline font-semibold">
+                    Xem tất cả
+                  </Link>
+                </div>
                 <div className="space-y-2">
-                  {["Kick-off Project", "UI Design Review"].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between p-2 rounded-lg hover:bg-[#F9FAFB] dark:hover:bg-[#063b2f] cursor-pointer transition"
+                  {meetingMinutes.slice(0, 3).map((item, i) => (
+                    <Link
+                      href={`/meeting-minutes/${item.id}`}
+                      key={item.id}
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-[#F9FAFB] dark:hover:bg-[#063b2f] cursor-pointer transition group"
                     >
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
-                        • {item}
+                      <span className="text-xs text-gray-500 dark:text-gray-400 group-hover:text-[#10B981] transition-colors truncate pr-4">
+                        • {item.title}
                       </span>
-                      <ExternalLink size={12} className="text-gray-300" />
-                    </div>
+                      <ExternalLink size={12} className="text-gray-300 group-hover:text-[#10B981]" />
+                    </Link>
                   ))}
                 </div>
               </div>

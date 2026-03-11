@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "title": "Biên Bản Họp Tuần 1 - Khởi Động Dự Án",
+        "date": "2026-03-01",
+        "description": "Thảo luận về phạm vi dự án, lựa chọn công nghệ và phân công nhiệm vụ ban đầu.",
+        "minuteDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y",
+        "assignmentDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y"
+    },
+    {
+        "id": "2",
+        "title": "Biên Bản Họp Tuần 2 - Thiết Kế CSDL & API",
+        "date": "2026-03-08",
+        "description": "Chốt sơ đồ cơ sở dữ liệu, danh sách API cần thiết và phân công công việc tuần 2.",
+        "minuteDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y",
+        "assignmentDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y"
+    },
+    {
+        "id": "3",
+        "title": "Biên Bản Họp Tuần 2 - Thiết Kế CSDL & API",
+        "date": "2026-03-08",
+        "description": "Chốt sơ đồ cơ sở dữ liệu, danh sách API cần thiết và phân công công việc tuần 2.",
+        "minuteDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y",
+        "assignmentDocId": "1Px0Q8E4pDifXNNYXDCa_JRF3fN3z_uVtCfV16t9ol4Y"
+    }
+]
