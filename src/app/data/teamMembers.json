@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Nguyễn Văn A",
+    "name": "Tạ Duy Phúc",
+    "mssv": "22521140",
     "role": "Leader / Project Manager",
     "desc": "Điều phối dự án, quản lý phạm vi và tiến độ tuần.",
     "color": "from-[#064E3B] to-[#10B981]",
@@ -9,7 +10,8 @@
   },
   {
     "id": 2,
-    "name": "Trần Thị B",
+    "name": "Phạm Nhật Khoa",
+    "mssv": "23520753",
     "role": "UI/UX Designer",
     "desc": "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
     "color": "from-[#10B981] to-[#059669]",
@@ -17,7 +19,8 @@
   },
   {
     "id": 3,
-    "name": "Lê Văn C",
+    "name": "Trịnh Hoài An",
+    "mssv": "24520079",
     "role": "Backend Developer",
     "desc": "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
     "color": "from-[#059669] to-[#064E3B]",
@@ -25,7 +28,8 @@
   },
   {
     "id": 4,
-    "name": "Phạm Minh D",
+    "name": "Huỳnh Bảo Hân",
+    "mssv": "24520446",
     "role": "Frontend Developer",
     "desc": "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
     "color": "from-[#064E3B] to-[#10B981]",
@@ -33,7 +37,8 @@
   },
   {
     "id": 5,
-    "name": "Hoàng Anh E",
+    "name": "Nguyễn Nhật Tân",
+    "mssv": "24521580",
     "role": "Tester / Marketing",
     "desc": "Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.",
     "color": "from-[#10B981] to-[#059669]",

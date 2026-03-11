@@ -12,20 +12,31 @@ export default function Footer() {
               <span className="font-bold tracking-tighter">GREENTEAM</span>
             </div>
             <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
-              Software Project Management 2024
+              Trường Đại học Công nghệ Thông tin - Đại học Quốc gia TP.HCM
             </p>
+          </div>
+          <div>
+            <span className="font-bold tracking-tighter">Liên Hệ</span>
+
+            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+              Địa chỉ: Khu phố 6, phường Linh Trung, Thủ Đức, TP Hồ Chí Minh.            </p>
+            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+              Email: 22521140@gm.uit.edu.vn</p>
+            <p className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+              SĐT: (+84)987654321</p>
           </div>
           <div className="flex gap-8 text-[10px] font-bold text-gray-400">
             <a href="#" className="hover:text-[#FBBF24]">
               GITHUB
             </a>
             <a href="#" className="hover:text-[#FBBF24]">
-              JIRA
+              FACEBOOK
             </a>
             <a href="#" className="hover:text-[#FBBF24]">
-              DOCUMENTATION
+              INSTAGRAM
             </a>
           </div>
+
         </div>
       </footer>
     </>

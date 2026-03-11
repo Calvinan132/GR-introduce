@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "name": "Giai đoạn 1: Khởi tạo",
+        "task": [
+            "Nghiên cứu các nền tảng tuyển dụng hiện có để xác định điểm mạnh, hạn chế và đề xuất cải tiến. ",
+            "Thu thập yêu cầu từ nhà tuyển dụng và ứng viên. ",
+            "Phân tích tài chính.",
+            "Xác định yêu cầu chức năng – phi chức năng."
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Giai đoạn 2: Lập kế hoạch",
+        "task": [
+            "Ước lượng chi phí cho từng hoạt động"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Giai đoạn 3: Thực thi",
+        "task": [
+            "Phát triển chức năng đăng tuyển, tạo hồ sơ, nộp CV, lọc hồ sơ, đặt lịch phỏng vấn. "
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Giai đoạn 4: Đóng dự án",
+        "task": [
+            "Thuyết trình nội dung dự án."
+        ]
+    }
+]

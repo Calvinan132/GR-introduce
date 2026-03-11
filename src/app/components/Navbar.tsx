@@ -27,14 +27,14 @@ export default function Navbar() {
     <nav className="bg-[#064E3B] dark:bg-[#011a14] text-white sticky top-0 z-50 shadow-md border-b border-[#10B981]/20">
       <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
         {/* LOGO */}
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <div className="w-9 h-9 bg-[#FBBF24] rounded-lg flex items-center justify-center">
             <Users size={20} className="text-[#064E3B]" />
           </div>
           <span className="font-black text-xl tracking-tighter">
             GREEN<span className="text-[#FBBF24]">5</span>
           </span>
-        </div>
+        </Link>
 
         {/* MENU */}
         <div className="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wide">
