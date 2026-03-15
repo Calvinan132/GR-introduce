@@ -1,118 +1,165 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
-    ArrowLeft,
-    Calendar,
-    FileText,
-    Target
+  ArrowLeft,
+  Calendar,
+  FileText,
+  Target,
+  ExternalLink,
+  Info,
 } from "lucide-react";
 import meetingMinutes from "../../data/meetingMinutes.json";
 
 export default function MeetingMinuteDetailPage() {
-    const params = useParams();
-    const id = params.id as string;
+  const params = useParams();
+  const id = params.id as string;
+  const [mounted, setMounted] = useState(false);
 
-    const meeting = meetingMinutes.find(m => m.id === id);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    if (!meeting) {
-        return (
-            <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#02140f] flex flex-col items-center justify-center p-4">
-                <p className="text-xl text-gray-500 mb-4">Không tìm thấy biên bản họp.</p>
-                <Link href="/meeting-minutes" className="text-emerald-600 hover:underline">
-                    Quay lại danh sách
-                </Link>
-            </div>
-        );
-    }
+  const meeting = meetingMinutes.find((m) => m.id === id);
 
-    const embedMinuteUrl = `https://docs.google.com/document/d/${meeting.minuteDocId}/preview`;
-    const embedAssignmentUrl = `https://docs.google.com/document/d/${meeting.assignmentDocId}/preview`;
+  if (!mounted) return null;
 
+  if (!meeting) {
     return (
-        <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#02140f] text-[#111827] dark:text-gray-100 font-sans transition-colors duration-300 pb-20">
-            <div className="max-w-7xl mx-auto px-4 py-8">
-
-                {/* Header */}
-                <div className="mb-8">
-                    <Link href="/meeting-minutes" className="inline-flex items-center gap-2 text-sm text-[#10B981] mb-6 hover:underline font-medium">
-                        <ArrowLeft size={16} /> Về danh sách biên bản
-                    </Link>
-
-                    <h1 className="text-3xl lg:text-4xl font-extrabold tracking-tight mb-4 text-[#064E3B] dark:text-white">
-                        {meeting.title}
-                    </h1>
-
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                        <span className="flex items-center gap-1.5 bg-white dark:bg-[#062d24] px-3 py-1.5 rounded-full border border-gray-100 dark:border-white/5 shadow-sm">
-                            <Calendar size={16} className="text-emerald-500" />
-                            Ngày họp: {new Date(meeting.date).toLocaleDateString('vi-VN')}
-                        </span>
-                        <p className="max-w-2xl bg-white dark:bg-[#062d24] px-4 py-1.5 rounded-full border border-gray-100 dark:border-white/5 shadow-sm truncate">
-                            {meeting.description}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Docs Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                    {/* Minute Doc */}
-                    <div className="flex flex-col space-y-4">
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
-                                <FileText className="text-emerald-600 dark:text-emerald-400" size={20} />
-                            </div>
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-                                Biên bản họp
-                            </h2>
-                        </div>
-
-                        <div className="bg-white dark:bg-[#062d24] rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 overflow-hidden h-[750px] relative w-full">
-                            <div className="absolute top-0 left-0 w-full p-2 bg-gray-50 dark:bg-[#04211a] border-b border-gray-100 dark:border-white/5 flex gap-2 z-10">
-                                <div className="w-3 h-3 rounded-full bg-red-400" />
-                                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                                <div className="w-3 h-3 rounded-full bg-green-400" />
-                            </div>
-                            <iframe
-                                src={embedMinuteUrl}
-                                className="w-full h-full border-0 pt-8"
-                                title="Google Docs Meeting Minute"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                    </div>
-
-                    {/* Assignment Doc */}
-                    <div className="flex flex-col space-y-4">
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
-                                <Target className="text-blue-600 dark:text-blue-400" size={20} />
-                            </div>
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-                                Phân công công việc
-                            </h2>
-                        </div>
-
-                        <div className="bg-white dark:bg-[#062d24] rounded-2xl shadow-xl border border-gray-100 dark:border-white/5 overflow-hidden h-[750px] relative w-full">
-                            <div className="absolute top-0 left-0 w-full p-2 bg-gray-50 dark:bg-[#04211a] border-b border-gray-100 dark:border-white/5 flex gap-2 z-10">
-                                <div className="w-3 h-3 rounded-full bg-red-400" />
-                                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                                <div className="w-3 h-3 rounded-full bg-green-400" />
-                            </div>
-                            <iframe
-                                src={embedAssignmentUrl}
-                                className="w-full h-full border-0 pt-8"
-                                title="Google Docs Task Assignment"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 text-center">
+        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+          <Info className="text-primary" size={40} />
         </div>
+        <h2 className="text-2xl font-black uppercase tracking-tighter mb-2">
+          Không tìm thấy biên bản
+        </h2>
+        <p className="text-foreground/50 mb-8 font-medium">
+          Dữ liệu cuộc họp này có thể đã bị dời hoặc không tồn tại.
+        </p>
+        <Link
+          href="/meeting-minutes"
+          className="px-8 py-3 bg-primary text-white rounded-full font-black text-xs uppercase tracking-widest hover:scale-105 transition shadow-lg shadow-primary/20"
+        >
+          Quay lại danh sách
+        </Link>
+      </div>
     );
+  }
+
+  const embedMinuteUrl = `https://docs.google.com/document/d/${meeting.minuteDocId}/preview`;
+  const embedAssignmentUrl = `https://docs.google.com/document/d/${meeting.assignmentDocId}/preview`;
+
+  return (
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-500 pb-24 font-sans">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* NAVIGATION & HEADER */}
+        <div className="mb-12">
+          <Link
+            href="/meeting-minutes"
+            className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-8 hover:translate-x-[-4px] transition-transform"
+          >
+            <ArrowLeft size={14} /> Danh sách biên bản
+          </Link>
+
+          <div className="space-y-4">
+            <h1 className="text-4xl lg:text-5xl font-black tracking-tighter uppercase leading-none">
+              {meeting.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary/10 shadow-sm">
+                <Calendar size={14} className="shrink-0" />
+                <span className="text-[11px] font-black uppercase tracking-widest">
+                  {new Date(meeting.date).toLocaleDateString("vi-VN")}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-background border border-primary/10 px-4 py-2 rounded-full shadow-sm">
+                <Info size={14} className="text-foreground/40 shrink-0" />
+                <span className="text-[11px] font-bold text-foreground/60 uppercase tracking-widest truncate max-w-[300px] md:max-w-xl">
+                  {meeting.description}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* DOCUMENTS GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* 1. BIÊN BẢN HỌP */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between px-2">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shadow-inner">
+                  <FileText className="text-primary" size={20} />
+                </div>
+                <h3 className="font-black uppercase tracking-tight text-lg">
+                  Biên bản chi tiết
+                </h3>
+              </div>
+              <a
+                href={`https://docs.google.com/document/d/${meeting.minuteDocId}/edit`}
+                target="_blank"
+                className="p-2 rounded-full hover:bg-primary/5 text-foreground/20 hover:text-primary transition-colors"
+              >
+                <ExternalLink size={18} />
+              </a>
+            </div>
+
+            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary/10 overflow-hidden h-[800px] relative">
+              {/* Browser Bar Fake */}
+              <div className="absolute top-0 left-0 w-full p-3 bg-primary/5 border-b border-primary/10 flex gap-2 z-10 backdrop-blur-md">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400/40" />
+              </div>
+              <iframe
+                src={embedMinuteUrl}
+                className="w-full h-full border-0 pt-10"
+                title="Meeting Minute Doc"
+                allowFullScreen
+              />
+            </div>
+          </div>
+
+          {/* 2. PHÂN CÔNG CÔNG VIỆC */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between px-2">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-blue-500/10 flex items-center justify-center shadow-inner">
+                  <Target className="text-blue-500" size={20} />
+                </div>
+                <h3 className="font-black uppercase tracking-tight text-lg">
+                  Phân công nhiệm vụ
+                </h3>
+              </div>
+              <a
+                href={`https://docs.google.com/document/d/${meeting.assignmentDocId}/edit`}
+                target="_blank"
+                className="p-2 rounded-full hover:bg-blue-500/5 text-foreground/20 hover:text-blue-500 transition-colors"
+              >
+                <ExternalLink size={18} />
+              </a>
+            </div>
+
+            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary/10 overflow-hidden h-[800px] relative">
+              {/* Browser Bar Fake */}
+              <div className="absolute top-0 left-0 w-full p-3 bg-blue-500/5 border-b border-primary/10 flex gap-2 z-10 backdrop-blur-md">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-400/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400/40" />
+              </div>
+              <iframe
+                src={embedAssignmentUrl}
+                className="w-full h-full border-0 pt-10"
+                title="Task Assignment Doc"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

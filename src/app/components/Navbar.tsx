@@ -1,71 +1,91 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Users, Sun, Moon } from "lucide-react";
+import { Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../../public/assets/CHEVELOGO.png";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // useEffect này đảm bảo component đã được gắn (mount) vào trình duyệt
-  // giúp tránh lỗi "Hydration Mismatch"
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Nếu chưa mount, chúng ta trả về giao diện khung hoặc nút ẩn
-  // để tránh việc icon bị nhảy qua lại khi load trang
   if (!mounted) {
+    // Trả về khung xám nhẹ để tránh nhảy layout (layout shift)
     return (
-      <nav className="bg-[#064E3B] dark:bg-[#011a14] text-white sticky top-0 z-50 h-16 border-b border-[#10B981]/20"></nav>
+      <nav className="h-16 border-b border-primary/10 bg-background"></nav>
     );
   }
 
   return (
-    <nav className="bg-[#064E3B] dark:bg-[#011a14] text-white sticky top-0 z-50 shadow-md border-b border-[#10B981]/20">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-[#FBBF24] rounded-lg flex items-center justify-center">
-            <Users size={20} className="text-[#064E3B]" />
+    <nav className="sticky top-0 z-50 h-16 border-b border-primary/10 bg-background/80 backdrop-blur-md transition-colors duration-300">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
+        {/* LOGO SECTION */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="flex h-12 w-16 items-center justify-center rounded-xl transition-transform group-hover:scale-110">
+            <Image
+              src={logo}
+              alt="CHEVE Logo"
+              priority
+              className="object-cover"
+            />
           </div>
-          <span className="font-black text-xl tracking-tighter">
-            GREEN<span className="text-[#FBBF24]">5</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl font-black leading-none tracking-tighter text-foreground">
+              CHE<span className="text-primary">VE</span>
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary/80">
+              Project Management
+            </span>
+          </div>
         </Link>
 
-        {/* MENU */}
-        <div className="hidden md:flex gap-6 text-sm font-semibold uppercase tracking-wide">
-          <Link href="/?section=team" className="hover:text-[#FBBF24] transition">
+        {/* MENU (Desktop) */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+          <Link
+            href="/?section=team"
+            className="text-foreground/70 hover:text-primary transition"
+          >
             Thành viên
           </Link>
-          <Link href="/?section=management" className="hover:text-[#FBBF24] transition">
+          <Link
+            href="/?section=management"
+            className="text-foreground/70 hover:text-primary transition"
+          >
             Quản lý
           </Link>
-          <Link href="/?section=product" className="hover:text-[#FBBF24] transition">
+          <Link
+            href="/?section=product"
+            className="text-foreground/70 hover:text-primary transition"
+          >
             Sản phẩm
           </Link>
-          <Link href="/timeline" className="hover:text-[#FBBF24] transition">
+          <Link
+            href="/timeline"
+            className="text-foreground/70 hover:text-primary transition"
+          >
             Timeline
           </Link>
         </div>
 
         {/* ACTIONS */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          {/* Nút chuyển Dark Mode */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full bg-[#10B981]/20 hover:bg-[#10B981]/40 transition-colors"
-            aria-label="Toggle Dark Mode"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all"
+            aria-label="Toggle Theme"
           >
-            {theme === "dark" ? (
-              <Sun size={20} className="text-[#FBBF24]" />
-            ) : (
-              <Moon size={20} className="text-white" />
-            )}
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <button className="bg-[#FBBF24] text-[#064E3B] px-5 py-2 rounded-full text-xs font-bold transition-all shadow-lg hover:scale-105">
+
+          {/* Nút Backlog nổi bật */}
+          <button className="hidden sm:block rounded-full bg-primary px-6 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40 active:scale-95">
             BACKLOG
           </button>
         </div>
