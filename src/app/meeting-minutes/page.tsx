@@ -1,73 +1,127 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-    ClipboardList,
-    Calendar,
-    ChevronRight,
-    ArrowLeft
+  ClipboardList,
+  Calendar,
+  ChevronRight,
+  ArrowLeft,
+  Search,
 } from "lucide-react";
 import meetingMinutes from "../data/meetingMinutes.json";
 
 export default function MeetingMinutesPage() {
-    return (
-        <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#02140f] text-[#111827] dark:text-gray-100 font-sans transition-colors duration-300 pb-20">
-            <div className="max-w-4xl mx-auto px-4 py-12">
-                {/* Back Link */}
-                <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#10B981] mb-8 hover:underline font-medium">
-                    <ArrowLeft size={16} /> Về trang chủ
-                </Link>
+  const [mounted, setMounted] = useState(false);
 
-                {/* Header Section */}
-                <div className="mb-12">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
-                            <ClipboardList className="text-emerald-600 dark:text-emerald-400" size={24} />
-                        </div>
-                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500">
-                            Biên Bản Họp Nhóm
-                        </h1>
-                    </div>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-                        Tổng hợp tất cả biên bản họp, nội dung thảo luận và bảng phân công công việc của nhóm.
-                    </p>
-                </div>
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-                {/* List of Meetings */}
-                <div className="space-y-4">
-                    {meetingMinutes.map((meeting) => (
-                        <Link href={`/meeting-minutes/${meeting.id}`} key={meeting.id}>
-                            <div className="bg-white dark:bg-[#062d24] p-6 rounded-2xl border border-gray-100 dark:border-white/5 shadow-sm hover:shadow-md hover:border-emerald-200 dark:hover:border-emerald-500/30 transition-all duration-300 group flex flex-col md:flex-row md:items-center justify-between gap-4 block mb-4">
-                                <div className="flex-1">
-                                    <div className="flex flex-wrap items-center gap-3 mb-2">
-                                        <h2 className="text-xl font-bold border-b border-transparent group-hover:border-emerald-500 dark:text-white transition-colors duration-300">
-                                            {meeting.title}
-                                        </h2>
-                                        <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2.5 py-1 rounded-full">
-                                            <Calendar size={12} />
-                                            {new Date(meeting.date).toLocaleDateString('vi-VN')}
-                                        </span>
-                                    </div>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-                                        {meeting.description}
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-end md:justify-center w-10 h-10 rounded-full bg-gray-50 dark:bg-[#04211a] group-hover:bg-emerald-500 group-hover:text-white text-gray-400 transition-colors duration-300 shrink-0">
-                                    <ChevronRight size={20} />
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
+  if (!mounted) return null;
 
-                    {meetingMinutes.length === 0 && (
-                        <div className="text-center py-16 bg-white dark:bg-[#062d24] rounded-2xl border border-dashed border-gray-200 dark:border-white/10">
-                            <ClipboardList className="mx-auto mb-4 text-gray-300 dark:text-gray-600" size={48} />
-                            <p className="text-gray-500 dark:text-gray-400 font-medium">Chưa có biên bản họp nào.</p>
-                        </div>
-                    )}
-                </div>
+  return (
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-500 pb-24">
+      <div className="max-w-5xl mx-auto px-4 py-16">
+        {/* Nút quay lại tinh tế */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-12 hover:translate-x-[-4px] transition-transform"
+        >
+          <ArrowLeft size={14} /> Về trang chủ
+        </Link>
+
+        {/* Header Section */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-14 h-14 rounded-[1.25rem] bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+              <ClipboardList className="text-white" size={28} />
             </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
+                Biên Bản <span className="text-primary">Họp Nhóm</span>
+              </h1>
+              <p className="text-[10px] font-bold text-foreground/40 uppercase tracking-[0.3em] mt-2">
+                Documentation & Group Progress
+              </p>
+            </div>
+          </div>
+          <p className="text-foreground/60 max-w-2xl leading-relaxed font-medium">
+            Lưu trữ toàn bộ nội dung thảo luận, các quyết định quan trọng và
+            bảng phân công nhiệm vụ chi tiết của đội ngũ Green5 qua từng giai
+            đoạn.
+          </p>
         </div>
-    );
+
+        {/* Search/Filter Bar (Gợi ý thêm để giao diện chuyên nghiệp hơn) */}
+        <div className="relative mb-10 group">
+          <Search
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-foreground/20 group-focus-within:text-primary transition-colors"
+            size={18}
+          />
+          <input
+            type="text"
+            placeholder="Tìm kiếm nội dung cuộc họp..."
+            className="w-full bg-background border border-primary/10 rounded-2xl py-4 pl-14 pr-6 text-sm outline-none focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all"
+          />
+        </div>
+
+        {/* List of Meetings */}
+        <div className="grid gap-6">
+          {meetingMinutes.map((meeting) => (
+            <Link
+              href={`/meeting-minutes/${meeting.id}`}
+              key={meeting.id}
+              className="group"
+            >
+              <div className="bg-background p-6 md:p-8 rounded-[2rem] border border-primary/10 shadow-sm group-hover:shadow-xl group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div className="flex-1 space-y-3">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="flex items-center gap-1.5 text-[10px] font-black text-primary bg-primary/5 px-3 py-1 rounded-full uppercase tracking-widest">
+                      <Calendar size={12} />
+                      {new Date(meeting.date).toLocaleDateString("vi-VN")}
+                    </span>
+                    <span className="text-[10px] font-bold text-foreground/20 uppercase tracking-widest">
+                      ID: #{meeting.id.toString().padStart(3, "0")}
+                    </span>
+                  </div>
+
+                  <h2 className="text-2xl font-black tracking-tight group-hover:text-primary transition-colors">
+                    {meeting.title}
+                  </h2>
+
+                  <p className="text-foreground/50 text-sm leading-relaxed line-clamp-2 font-medium">
+                    {meeting.description}
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0 shadow-inner">
+                  <ChevronRight size={24} />
+                </div>
+              </div>
+            </Link>
+          ))}
+
+          {meetingMinutes.length === 0 && (
+            <div className="text-center py-24 bg-background rounded-[2rem] border-2 border-dashed border-primary/10">
+              <ClipboardList
+                className="mx-auto mb-6 text-foreground/10"
+                size={64}
+              />
+              <p className="text-foreground/40 font-black uppercase tracking-widest text-sm">
+                Chưa có dữ liệu biên bản họp
+              </p>
+            </div>
+          )}
+        </div>
+
+        {/* Footer info */}
+        <div className="mt-16 text-center">
+          <p className="text-[10px] font-bold text-foreground/20 uppercase tracking-[0.4em]">
+            Green5 Management System v1.0
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }

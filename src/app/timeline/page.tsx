@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import timelineData from "../data/timelineData.json";
 import {
   CheckCircle2,
@@ -9,83 +10,120 @@ import {
   ChevronUp,
   Flag,
 } from "lucide-react";
-const TimelinePage = () => {
-  const [expandedId, setExpandedId] = useState<number | null>(1);
+
+const TimelineItem = ({ item, isExpanded, onToggle, isOdd }: any) => {
+  // Xác định Icon dựa trên trạng thái
+  const StatusIcon = () => {
+    switch (item.status) {
+      case "completed":
+        return <CheckCircle2 size={16} className="text-primary" />;
+      case "in-progress":
+        return <Clock size={16} className="text-amber-500 animate-pulse" />;
+      default:
+        return <Flag size={16} className="text-foreground/20" />;
+    }
+  };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-extrabold text-[#064E3B] dark:text-[#10B981] mb-2">
-          Lộ Trình Phát Triển
-        </h2>
-        <p className="text-gray-500">
-          Theo dõi tiến độ thực hiện dự án theo từng tuần
-        </p>
+    <div
+      className={`relative flex items-center justify-between md:justify-normal ${isOdd ? "md:flex-row-reverse" : ""} group`}
+    >
+      {/* 1. Điểm mốc trên đường kẻ */}
+      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-background border-4 border-primary z-10 absolute left-0 md:left-1/2 transform md:-translate-x-1/2 transition-all duration-300 group-hover:scale-125 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+        <StatusIcon />
       </div>
 
-      <div className="relative">
-        {/* Đường kẻ dọc xuyên suốt */}
-        <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+      {/* 2. Nội dung Card */}
+      <div
+        className={`ml-14 md:ml-0 md:w-[44%] bg-background p-6 rounded-[2rem] shadow-sm border border-primary/10 hover:border-primary/30 transition-all cursor-pointer group/card`}
+        onClick={onToggle}
+      >
+        <div className="flex justify-between items-start mb-3">
+          <span className="text-[10px] font-black text-primary uppercase tracking-[0.2em]">
+            {item.week}
+          </span>
+          <span className="flex items-center text-[10px] text-foreground/40 font-bold">
+            <Calendar size={12} className="mr-1" /> {item.date}
+          </span>
+        </div>
 
-        <div className="space-y-12">
-          {timelineData.map((item, index) => (
-            <div
-              key={item.id}
-              className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group`}
-            >
-              {/* Icon mốc thời gian */}
-              <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-[#02140f] border-4 border-[#10B981] z-10 absolute left-0 md:left-1/2 transform md:-translate-x-1/2 transition-transform group-hover:scale-125">
-                {item.status === "completed" ? (
-                  <CheckCircle2 size={16} className="text-[#10B981]" />
-                ) : item.status === "in-progress" ? (
-                  <Clock size={16} className="text-amber-500 animate-pulse" />
-                ) : (
-                  <Flag size={16} className="text-gray-300" />
-                )}
-              </div>
+        <h4 className="font-black text-foreground flex justify-between items-center group-hover/card:text-primary transition-colors">
+          {item.title}
+          <div className="p-1 rounded-full bg-primary/5 text-primary">
+            {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </div>
+        </h4>
 
-              {/* Nội dung Card */}
-              <div
-                className="ml-12 md:ml-0 md:w-[45%] bg-white dark:bg-[#062d24] p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-md transition-all cursor-pointer"
-                onClick={() =>
+        {/* Danh sách Task con (Animation) */}
+        <div
+          className={`grid transition-all duration-300 ease-in-out ${isExpanded ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"}`}
+        >
+          <ul className="overflow-hidden space-y-2 border-t border-primary/5 pt-4">
+            {item.tasks.map((task: string, i: number) => (
+              <li
+                key={i}
+                className="text-xs text-foreground/60 flex items-start gap-3"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                {task}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TimelinePage = () => {
+  const [mounted, setMounted] = useState(false);
+  const [expandedId, setExpandedId] = useState<number | null>(1);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
+      <div className="max-w-5xl mx-auto px-4 py-20">
+        {/* HEADER */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-primary mb-4 tracking-tighter uppercase">
+            Lộ Trình <span className="text-foreground">Phát Triển</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-6" />
+          <p className="text-foreground/50 font-bold uppercase tracking-widest text-xs">
+            Chi tiết tiến độ thực hiện dự án Green5 theo từng tuần
+          </p>
+        </div>
+
+        {/* TIMELINE CONTAINER */}
+        <div className="relative">
+          {/* Đường kẻ dọc thông minh (Gradient) */}
+          <div className="absolute left-5 md:left-1/2 transform md:-translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-primary/50 via-primary/20 to-transparent"></div>
+
+          <div className="space-y-16">
+            {timelineData.map((item, index) => (
+              <TimelineItem
+                key={item.id}
+                item={item}
+                isOdd={index % 2 !== 0}
+                isExpanded={expandedId === item.id}
+                onToggle={() =>
                   setExpandedId(expandedId === item.id ? null : item.id)
                 }
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <span className="text-[10px] font-black text-[#10B981] uppercase tracking-widest">
-                    {item.week}
-                  </span>
-                  <span className="flex items-center text-[10px] text-gray-400">
-                    <Calendar size={12} className="mr-1" /> {item.date}
-                  </span>
-                </div>
+              />
+            ))}
+          </div>
+        </div>
 
-                <h4 className="font-bold text-[#064E3B] dark:text-white mb-2 flex justify-between items-center">
-                  {item.title}
-                  {expandedId === item.id ? (
-                    <ChevronUp size={16} />
-                  ) : (
-                    <ChevronDown size={16} />
-                  )}
-                </h4>
-
-                {/* Danh sách Task con (Hiện khi click) */}
-                {expandedId === item.id && (
-                  <ul className="mt-4 space-y-2 border-t border-gray-50 dark:border-white/5 pt-4 animate-in fade-in slide-in-from-top-2">
-                    {item.tasks.map((task, i) => (
-                      <li
-                        key={i}
-                        className="text-xs text-gray-500 dark:text-gray-400 flex items-center"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] mr-2"></span>
-                        {task}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          ))}
+        {/* FOOTER TIMELINE */}
+        <div className="mt-24 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[10px] uppercase tracking-widest">
+            <Flag size={14} /> Điểm kết thúc dự án: Giai đoạn 1
+          </div>
         </div>
       </div>
     </div>
