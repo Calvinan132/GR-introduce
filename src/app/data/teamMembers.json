@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Tạ Duy Phúc",
     "mssv": "22521140",
-    "role": "Leader / Project Manager",
+    "role": "Trưởng nhóm",
     "desc": "Điều phối dự án, quản lý phạm vi và tiến độ tuần.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/chatGPT.png"
@@ -12,36 +12,37 @@
     "id": 2,
     "name": "Phạm Nhật Khoa",
     "mssv": "23520753",
-    "role": "UI/UX Designer",
+    "role": "Phó nhóm",
     "desc": "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/chatGPT.png"
   },
+
   {
     "id": 3,
-    "name": "Trịnh Hoài An",
-    "mssv": "24520079",
-    "role": "Backend Developer",
-    "desc": "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
+    "name": "Huỳnh Bảo Hân",
+    "mssv": "24520446",
+    "role": "Thư ký",
+    "desc": "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
     "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/chatGPT.png"
+    "image": "/assets/Han.jpg"
   },
   {
     "id": 4,
-    "name": "Huỳnh Bảo Hân",
-    "mssv": "24520446",
-    "role": "Frontend Developer",
-    "desc": "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
+    "name": "Trịnh Hoài An",
+    "mssv": "24520079",
+    "role": "Thành viên",
+    "desc": "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
     "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/chatGPT.png"
+    "image": "/assets/An.jpg"
   },
   {
     "id": 5,
     "name": "Nguyễn Nhật Tân",
     "mssv": "24521580",
-    "role": "Tester / Marketing",
+    "role": "Thành viên",
     "desc": "Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.",
     "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/chatGPT.png"
+    "image": "/assets/Tan.png"
   }
 ]

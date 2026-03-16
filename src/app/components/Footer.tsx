@@ -1,3 +1,20 @@
+const socials = [
+  {
+    name: "Github",
+    url: "https://github.com/Calvinan132",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com",
+  },
+];
+import logo from "../../../public/assets/CHEVELOGO.png";
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-primary text-white py-16 px-4 transition-colors duration-300">
@@ -5,11 +22,14 @@ export default function Footer() {
         {/* CỘT 1: THÔNG TIN TRƯỜNG */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#FBBF24] rounded-lg flex items-center justify-center text-primary text-sm font-black shadow-lg">
-              5
+            <div className="w-16 h-16  rounded-lg flex items-center justify-center  text-sm font-black ">
+              <Image src={logo} alt="Logo" className="object-contain" />
             </div>
             <span className="font-black text-xl tracking-tighter uppercase">
-              Green<span className="text-[#FBBF24]">Team</span>
+              CHE<span className="text-[#FBBF24]">VE</span>
+            </span>
+            <span className="text-xs uppercase tracking-widest text-[#fffff]">
+              Team
             </span>
           </div>
           <p className="text-[11px] text-white/70 uppercase tracking-[0.2em] font-bold leading-relaxed">
@@ -41,13 +61,13 @@ export default function Footer() {
 
         {/* CỘT 3: MẠNG XÃ HỘI */}
         <div className="flex md:justify-end gap-6 pt-4 md:pt-0">
-          {["Github", "Facebook", "Instagram"].map((social) => (
+          {socials.map((social) => (
             <a
-              key={social}
-              href="#"
+              key={social.name}
+              href={social.url}
               className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-[#FBBF24] hover:-translate-y-1 transition-all duration-300"
             >
-              {social}
+              {social.name}
             </a>
           ))}
         </div>
