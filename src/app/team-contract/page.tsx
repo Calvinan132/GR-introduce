@@ -154,8 +154,8 @@ export default function TeamContractPage() {
                     <Coffee size={14} /> Đặc quyền thưởng
                   </p>
                   <p className="text-xs font-medium leading-relaxed opacity-90">
-                    Hoàn thành xuất sắc nhiệm vụ sẽ được Leader thưởng 1 ly cafe
-                    Ngô Gia.
+                    Hoàn thành xuất sắc nhiệm vụ sẽ được 1 tràng vỗ tay của cả
+                    nhóm
                   </p>
                 </div>
                 <div className="p-4 bg-black/10 rounded-2xl border border-white/5">
@@ -164,31 +164,9 @@ export default function TeamContractPage() {
                   </p>
                   <p className="text-xs font-medium leading-relaxed opacity-90">
                     Chậm deadline hoặc thiếu tích cực sẽ bị trừ điểm đánh giá
-                    hoặc loại khỏi nhóm.
+                    hoặc khiển trách.
                   </p>
                 </div>
-              </div>
-            </section>
-
-            {/* 4. Evaluation Criteria */}
-            <section className="bg-background border border-primary/10 p-8 rounded-[2rem] shadow-sm">
-              <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
-                <Star className="text-primary" size={22} /> Tiêu chí đánh giá
-              </h3>
-              <div className="space-y-2">
-                {evaluationCriteria.map((c, i) => (
-                  <div
-                    key={i}
-                    className="flex justify-between items-center p-3 hover:bg-primary/5 rounded-xl transition-colors group"
-                  >
-                    <span className={`font-black text-lg ${c.color}`}>
-                      {c.score}
-                    </span>
-                    <span className="text-[11px] font-bold opacity-40 uppercase tracking-tighter group-hover:opacity-100 transition-opacity">
-                      {c.desc}
-                    </span>
-                  </div>
-                ))}
               </div>
             </section>
           </div>

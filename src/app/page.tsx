@@ -95,9 +95,8 @@ const GreenTeamContent = () => {
 
           {/* Đoạn mô tả */}
           <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto font-medium leading-relaxed">
-            Giải pháp tối ưu cho nhóm{" "}
-            <span className="text-white font-bold">5 người</span> trong việc
-            điều phối tiến độ và kiểm soát phạm vi dự án phần mềm chuyên nghiệp.
+            Giải pháp tối ưu cho nhóm trong việc điều phối tiến độ và kiểm soát
+            phạm vi dự án phần mềm chuyên nghiệp.
           </p>
 
           {/* Hộp mục tiêu nhóm (Glassmorphism Card) */}
