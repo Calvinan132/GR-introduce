@@ -35,7 +35,7 @@ const TimelineItem = ({ item, isExpanded, onToggle, isOdd }: any) => {
 
       {/* 2. Nội dung Card */}
       <div
-        className={`ml-14 md:ml-0 md:w-[44%] bg-background p-6 rounded-[2rem] shadow-sm border border-primary/10 hover:border-primary/30 transition-all cursor-pointer group/card`}
+        className={`ml-14 md:ml-0 md:w-[44%] bg-background p-6 rounded-[2rem] shadow-sm border border-primary hover:border-primary/30 transition-all cursor-pointer group/card`}
         onClick={onToggle}
       >
         <div className="flex justify-between items-start mb-3">
@@ -121,7 +121,7 @@ const TimelinePage = () => {
 
         {/* FOOTER TIMELINE */}
         <div className="mt-24 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary/10 text-primary font-black text-[10px] uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary text-primary font-black text-[10px] uppercase tracking-widest">
             <Flag size={14} /> Điểm kết thúc dự án: Giai đoạn 1
           </div>
         </div>

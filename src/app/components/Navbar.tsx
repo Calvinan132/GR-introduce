@@ -23,7 +23,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 h-16 border-b border-primary/10 bg-background/80 backdrop-blur-md transition-colors duration-300">
+    <nav className="sticky top-0 z-50 h-16 border-b border-primary bg-background/80 backdrop-blur-md transition-colors duration-300">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4">
         {/* LOGO SECTION */}
         <Link href="/" className="flex items-center gap-2 group">
@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* Nút chuyển Dark Mode */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-all"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/25 text-primary hover:bg-primary/20 transition-all"
             aria-label="Toggle Theme"
           >
             {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}

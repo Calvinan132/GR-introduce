@@ -21,16 +21,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         {/* CỘT 1: THÔNG TIN TRƯỜNG */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <div className="w-16 h-16  rounded-lg flex items-center justify-center  text-sm font-black ">
+          <div className="flex  gap-2 flex-col items-center md:items-start ">
+            <div className="w-24 h-16  rounded-lg flex items-center justify-center text-sm font-black ">
               <Image src={logo} alt="Logo" className="object-contain" />
             </div>
-            <span className="font-black text-xl tracking-tighter uppercase">
-              CHE<span className="text-[#FBBF24]">VE</span>
-            </span>
-            <span className="text-xs uppercase tracking-widest text-[#fffff]">
-              Team
-            </span>
+            <div>
+              <span className="font-black text-xl tracking-tighter uppercase pr-1">
+                CHE<span className="text-[#FBBF24]">VE</span>
+              </span>
+              <span className="text-xl uppercase tracking-widest text-[#fffff]">
+                Team
+              </span>
+            </div>
           </div>
           <p className="text-[11px] text-white/70 uppercase tracking-[0.2em] font-bold leading-relaxed">
             Trường Đại học Công nghệ Thông tin <br />
@@ -65,7 +67,7 @@ export default function Footer() {
             <a
               key={social.name}
               href={social.url}
-              className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-[#FBBF24] hover:-translate-y-1 transition-all duration-300"
+              className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 hover:text-[#FBBF24] hover:-translate-y-1 transition-all duration-300 flex it"
             >
               {social.name}
             </a>

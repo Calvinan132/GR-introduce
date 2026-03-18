@@ -6,7 +6,7 @@
     "role": "Trưởng nhóm",
     "desc": "Điều phối dự án, quản lý phạm vi và tiến độ tuần.",
     "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/chatGPT.png"
+    "image": "/assets/Phuc.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "role": "Phó nhóm",
     "desc": "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
     "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/chatGPT.png"
+    "image": "/assets/Khoa.jpg"
   },
 
   {

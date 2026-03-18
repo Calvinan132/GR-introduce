@@ -54,7 +54,7 @@ export default function TeamContractPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* LEFT: DOCUMENT VIEWER */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center justify-between bg-background border border-primary/10 p-5 rounded-3xl shadow-sm">
+            <div className="flex items-center justify-between bg-background border border-primary p-5 rounded-3xl shadow-sm">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1.5 mr-2">
                   <div className="w-3 h-3 rounded-full bg-red-400" />
@@ -75,7 +75,7 @@ export default function TeamContractPage() {
               </a>
             </div>
 
-            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary/10 overflow-hidden h-[750px] relative group">
+            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary overflow-hidden h-[750px] relative group">
               <iframe
                 src={embedUrl}
                 className="w-full h-full border-0"
@@ -88,7 +88,7 @@ export default function TeamContractPage() {
           {/* RIGHT: STRUCTURED CONTENT */}
           <div className="lg:col-span-5 space-y-8">
             {/* 1. Principles */}
-            <section className="bg-background border border-primary/10 p-8 rounded-[2rem] shadow-sm">
+            <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
               <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
                 <Users className="text-primary" size={22} /> Nguyên tắc làm việc
               </h3>
@@ -108,7 +108,7 @@ export default function TeamContractPage() {
             </section>
 
             {/* 2. Meeting Rules */}
-            <section className="bg-background border border-primary/10 p-8 rounded-[2rem] shadow-sm">
+            <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
               <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
                 <Calendar className="text-primary" size={22} /> Lịch họp nhóm
               </h3>
