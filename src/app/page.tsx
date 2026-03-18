@@ -278,7 +278,7 @@ const GreenTeamContent = () => {
                   <div className="text-center py-10 opacity-20">
                     <ClipboardList className="mx-auto mb-2" size={40} />
                     <p className="text-xs font-bold uppercase">
-                      Syncing Notion...
+                      Các thông tin kế hoạch được thực hiện trên Notion.
                     </p>
                   </div>
                 )}

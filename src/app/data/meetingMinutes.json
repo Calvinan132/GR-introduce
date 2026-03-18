@@ -2,9 +2,17 @@
   {
     "id": "1",
     "title": "Biên Bản Họp Tuần 1 - Khởi Động Dự Án",
-    "date": "2026-03-01",
+    "date": "2026-03-12",
     "description": "Thảo luận về phạm vi dự án, lựa chọn công nghệ và phân công nhiệm vụ ban đầu.",
     "minuteDocId": "1kKkpwzw85xqXgdhkveTZLfze4v-NF17pE155IJ-APwA",
+    "assignmentDocId": "1asNVoV16gku3d1SrSCKlseZHyUJf0-zRX9GSnhSuvGM"
+  },
+  {
+    "id": "2",
+    "title": "Biên Bản Họp Tuần 2 - Báo cáo tiến độ",
+    "date": "2026-03-16",
+    "description": "Báo cáo tiến độ công việc, thảo luận về những khó khăn gặp phải và điều chỉnh kế hoạch",
+    "minuteDocId": "1OJm9d1csxCK0Jf2peYw-XtHGG-T16AJKNC7GWmD7iLY",
     "assignmentDocId": "1asNVoV16gku3d1SrSCKlseZHyUJf0-zRX9GSnhSuvGM"
   }
 ]

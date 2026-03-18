@@ -95,7 +95,7 @@ const TimelinePage = () => {
           </h2>
           <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-6" />
           <p className="text-foreground/50 font-bold uppercase tracking-widest text-xs">
-            Chi tiết tiến độ thực hiện dự án Green5 theo từng tuần
+            Chi tiết tiến độ thực hiện dự án theo từng tuần
           </p>
         </div>
 

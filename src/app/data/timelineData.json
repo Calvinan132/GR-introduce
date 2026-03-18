@@ -3,22 +3,28 @@
     "id": 1,
     "week": "Tuần 1",
     "title": "Khởi động dự án & Lập kế hoạch",
-    "date": "05/03 - 19/03",
+    "date": "05/03 - 12/03",
     "status": "completed",
     "tasks": [
       "Họp kick-off nhóm",
       "Phân chia vai trò và nhiệm vụ",
       "Tổng hợp và viết Hợp đồng nhóm",
-      "Tạo webite giới thiệu nhóm"
+      "Tạo webite giới thiệu nhóm",
+      "Xây dựng SOW",
+      "Xây dựng Project Charter",
+      "Lập bảng câu hỏi phỏng vấn khảo sát hiện trạng"
     ]
   },
   {
     "id": 2,
     "week": "Tuần 2",
-    "title": "Coming soon",
-    "date": "08/03 - 14/03",
+    "title": "Báo cáo tiến độ làm việc & điều chỉnh tuần 1",
+    "date": "12/03 - 19/03",
     "status": "completed",
-    "tasks": ["C"]
+    "tasks": [
+      "Cập nhật tiến độ trên Notion và báo cáo nhóm",
+      "Nhận xét và điều chỉnh kế hoạch tuần 1"
+    ]
   },
   {
     "id": 3,

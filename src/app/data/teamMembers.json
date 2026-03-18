@@ -10,29 +10,29 @@
   },
   {
     "id": 2,
+    "name": "Huỳnh Bảo Hân",
+    "mssv": "24520446",
+    "role": "Thư ký",
+    "desc": "Tổng hợp biên bản họp, quản lý tài liệu và hỗ trợ truyền thông nội bộ.",
+    "color": "from-[#d5ae6b] to-[#b45309]",
+    "image": "/assets/Han.jpg"
+  },
+  {
+    "id": 3,
     "name": "Phạm Nhật Khoa",
     "mssv": "23520753",
-    "role": "Phó nhóm",
-    "desc": "Thiết kế giao diện, poster và bộ nhận diện thương hiệu.",
+    "role": "Thành viên",
+    "desc": "Xây dụng SOW , hỗ trợ quản lý tiến độ và rủi ro.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/Khoa.jpg"
   },
 
   {
-    "id": 3,
-    "name": "Huỳnh Bảo Hân",
-    "mssv": "24520446",
-    "role": "Thư ký",
-    "desc": "Chuyển đổi thiết kế thành mã nguồn React/Tailwind.",
-    "color": "from-[#d5ae6b] to-[#b45309]",
-    "image": "/assets/Han.jpg"
-  },
-  {
     "id": 4,
     "name": "Trịnh Hoài An",
     "mssv": "24520079",
     "role": "Thành viên",
-    "desc": "Xây dựng hệ thống API và quản trị cơ sở dữ liệu.",
+    "desc": "Phát triển website giới thiệu nhóm và hỗ trợ xây dựng nội dung truyền thông.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/An.jpg"
   },

@@ -1,59 +1,99 @@
-# 🍃 GreenTeam - Hệ Thống Quản Trị Dự Án Thông Minh
+# 🍃 GreenTeam - Quản Trị Dự Án Phần Mềm 
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
 
-Đây là website giới thiệu đề tài và quản lý tiến độ của **Nhóm 5** thuộc học phần **Quản lý Dự án Phần mềm**. Website tập trung vào các giải pháp xanh, bền vững và quy trình quản trị Agile hiện đại.
+Chào mừng đến với hệ thống quản lý và giới thiệu dự án của **CHEVE-Team** thuộc học phần **Quản lý Dự án Phần mềm**. Website này được thiết kế nhằm mục đích trình bày đầy đủ các thông tin nội bộ của nhóm, hồ sơ các thành viên, hợp đồng làm việc, biên bản các cuộc họp và quá trình thực hiện đồ án (WBS, SOW, Timeline).
 
 ---
 
-## 🎨 Bộ Nhận Diện Thương Hiệu
+## 👥 Đội Ngũ Thành Viên
 
-Dự án sử dụng bảng màu chuyên nghiệp để tạo cảm giác tin cậy và hiện đại:
-
-- **Primary:** `#064E3B` (Xanh lục đậm) - Header, Footer & Main Sections.
-- **Secondary:** `#10B981` (Xanh lá tươi) - Icons & Subtitles.
-- **Accent:** `#FBBF24` (Vàng hổ phách) - Call-to-Action & Highlights.
-- **Background:** `#F9FAFB` (Light) / `#02140F` (Dark).
-
----
-
-## 👥 Đội Ngũ Thành Viên (Nhóm 5)
-
-| Thành viên       | Vai trò           | Trách nhiệm chính                               |
-| :--------------- | :---------------- | :---------------------------------------------- |
-| **Nguyễn Văn A** | Leader / PM       | Điều phối dự án, quản lý phạm vi & tiến độ.     |
-| **Trần Thị B**   | UI/UX Designer    | Thiết kế giao diện (Figma), Poster & Dark mode. |
-| **Lê Văn C**     | Backend Dev       | Xây dựng API, Database & Logic hệ thống.        |
-| **Phạm Minh D**  | Frontend Dev      | Phát triển giao diện React/Next.js & Tailwind.  |
-| **Hoàng Anh E**  | Tester / Marketer | Kiểm thử chất lượng & Sản xuất Video quảng bá.  |
+| Thành viên           | MSSV       | Vai trò       | Trách nhiệm chính                                                           |
+| :------------------- | :--------- | :------------ | :-------------------------------------------------------------------------- |
+| **Tạ Duy Phúc**      | `22521140` | Trưởng nhóm   | Điều phối dự án, quản lý phạm vi và tiến độ tuần.                           |
+| **Huỳnh Bảo Hân**    | `24520446` | Thư ký        | Tổng hợp biên bản họp, quản lý tài liệu và hỗ trợ truyền thông nội bộ.      |
+| **Phạm Nhật Khoa**   | `23520753` | Thành viên    | Xây dụng SOW, hỗ trợ quản lý tiến độ và rủi ro.                             |
+| **Trịnh Hoài An**    | `24520079` | Thành viên    | Phát triển website giới thiệu nhóm và hỗ trợ xây dựng nội dung truyền thông.|
+| **Nguyễn Nhật Tân**  | `24521580` | Thành viên    | Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.                    |
 
 ---
 
-## 🚀 Tính Năng Chính
+## 🚀 Tính Năng Chính Của Hệ Thống
 
-- [x] **Dark Mode:** Tích hợp chuyển đổi giao diện sáng/tối mượt mà qua `next-themes`.
-- [x] **Quản lý Tiến độ:** Theo dõi công việc theo từng tuần (WBS).
-- [x] **Tài liệu Nhóm:** Truy cập nhanh Hợp đồng nhóm, Biên bản họp & Backlog.
-- [x] **Showcase:** Trình bày Video demo, Poster quảng bá và bản thiết kế giao diện.
-- [x] **Responsive:** Hiển thị tối ưu trên mọi thiết bị (Mobile/Tablet/Desktop).
+Dự án không chỉ là một landing page thông thường mà đóng vai trò như một **dashboard quản trị nội bộ** thu nhỏ của nhóm:
+
+- 📅 **Quản lý Tiến độ (Timeline):** Xây dựng cấu trúc phân rã công việc (WBS). Theo dõi tiến độ từng tuần qua các mốc thời gian (Khởi động dự án, báo cáo, điều chỉnh).
+- 🤝 **Hợp đồng nhóm (Team Contract):** Hệ thống hóa các nguyên tắc, thưởng phạt nội bộ cùng quyền lợi cụ thể của mỗi cá nhân.
+- 📝 **Biên Bản Họp (Meeting Minutes):** Lưu trữ và nhúng trực tiếp API/iframe các biên bản họp hàng tuần (Google Docs).
+- 🔄 **Notion Integration:** Ứng dụng tự động hóa việc kéo dữ liệu backlog/task từ hệ thống điều phối Notion để hiển thị lên Website.
+- 🌓 **Dark Mode & Responsive:** Tích hợp giao diện sáng/tối tự động nhờ `next-themes` và tối ưu tương thích mọi thiết bị.
 
 ---
 
-## 🛠 Công Nghệ Sử Dụng
+## 📊 Các Giai Đoạn Dự Án
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS + PostCSS
+Dự án được thiết kế xoay quanh 4 giai đoạn chính yếu:
+
+1. **Giai đoạn 1: Khởi tạo**
+   Thực hiện thu thập yêu cầu, xác định chức năng/phi chức năng, phân tích tài chính và giao nhiệm vụ.
+2. **Giai đoạn 2: Lập kế hoạch**
+   Ước lượng chi phí, chuẩn bị phương án thực thi quản lý và hoàn thành mô hình thiết kế.
+3. **Giai đoạn 3: Thực thi**
+   Lựa chọn kiến trúc, thiết kế cơ sở dữ liệu, giao diện (UI/UX), Backend và quy trình kiểm thử.
+4. **Giai đoạn 4: Đóng dự án**
+   Hoàn thành bàn giao, thuyết trình nội dung và đánh giá hiệu suất khi đưa vào thực tế.
+
+---
+
+## 🛠 Công Nghệ Trang Bị
+
+- **Framework:** Next.js 15+ (App Router)
+- **Library:** React 19
+- **Styling:** Tailwind CSS 4 + PostCSS
 - **Icons:** Lucide React
-- **Theme:** Next-themes
-- **Deployment:** Vercel
+- **Data Fetching:** SWR, Fetch API, Notion API
+- **Language:** TypeScript
+- **State/Theme:** `next-themes`
 
 ---
 
-## 💻 Cài Đặt & Chạy Dự Án
+## 💻 Hướng Dẫn Cài Đặt & Khởi Chạy
+
+### Yêu cầu hệ thống
+- Node.js (phiên bản `>= 18.x`)
+- npm hoặc yarn
+
+### Các bước cài đặt
 
 1. **Clone repository:**
    ```bash
-   git clone [https://github.com/user-name/green-team-web.git](https://github.com/user-name/green-team-web.git)
+   git clone https://github.com/user-name/green-team-web.git
+   cd green-team-web
    ```
+
+2. **Cài đặt dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Cấu hình kết nối Notion API (`.env.local`):**
+   Tạo file `.env.local` ở thư mục gốc và thêm các Key:
+   ```env
+   NOTION_API_KEY=your_notion_api_key_here
+   DATABASE_ID=your_notion_database_id_here
+   ```
+
+4. **Đồng bộ dữ liệu Task từ Workspace Notion:**
+   Chạy script quản trị dữ liệu ở thư mục scripts để lấy các dữ liệu JSON về cục bộ:
+   ```bash
+   npm run fetch-tasks
+   ```
+
+5. **Chạy server phát hành nội bộ:**
+   ```bash
+   npm run dev
+   ```
+   *Truy cập [http://localhost:3000](http://localhost:3000) để tải toàn bộ giao diện và kiểm thử website.*

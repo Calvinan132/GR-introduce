@@ -1,33 +1,47 @@
 [
-    {
-        "id": 1,
-        "name": "Giai đoạn 1: Khởi tạo",
-        "task": [
-            "Nghiên cứu các nền tảng tuyển dụng hiện có để xác định điểm mạnh, hạn chế và đề xuất cải tiến. ",
-            "Thu thập yêu cầu từ nhà tuyển dụng và ứng viên. ",
-            "Phân tích tài chính.",
-            "Xác định yêu cầu chức năng – phi chức năng."
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Giai đoạn 2: Lập kế hoạch",
-        "task": [
-            "Ước lượng chi phí cho từng hoạt động"
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Giai đoạn 3: Thực thi",
-        "task": [
-            "Phát triển chức năng đăng tuyển, tạo hồ sơ, nộp CV, lọc hồ sơ, đặt lịch phỏng vấn. "
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Giai đoạn 4: Đóng dự án",
-        "task": [
-            "Thuyết trình nội dung dự án."
-        ]
-    }
+  {
+    "id": 1,
+    "name": "Giai đoạn 1: Khởi tạo",
+    "task": [
+      "Thu thập yêu cầu từ nhà tuyển dụng và ứng viên.",
+      "Phân tích tài chính.",
+      "Xác định yêu cầu chức năng – phi chức năng.",
+      "Phân công nhiệm vụ cho các thành viên."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Giai đoạn 2: Lập kế hoạch",
+    "task": [
+      "Ước lượng chi phí cho từng hoạt động",
+      "Các yêu cầu chức năng, phi chức năng được làm rõ.",
+      "Xây dựng các mô hình biểu diễn cấu trúc và luồng hoạt động của hệ thống.",
+      "Đảm bảo hệ thống đáp ứng đúng nhu cầu đặt ra.",
+      "Chuẩn bị phương án thực thi và quản lý dự án hiệu quả."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Giai đoạn 3: Thực thi",
+    "task": [
+      "Lựa chọn kiến trúc phù hợp với yêu cầu.",
+      "Hoàn thành thiết kế cơ sở dữ liệu.",
+      "Hoàn thành thiết kế giao diện (UI/UX).",
+      "Hoàn thành thiết kế luồng xử lý Logic.",
+      "Đảm bảo bảo mật trong thiết kế. ",
+      "Kiểm thử sản phẩm "
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Giai đoạn 4: Đóng dự án",
+    "task": [
+      "Thuyết trình nội dung dự án.",
+      "Đưa hệ thống vào môi trường thực tế.",
+      "Đảm bảo hiệu suất hoạt động của hệ thống.",
+      "Hoàn thành bàn giao tài liệu và quyền quản lý",
+      "Đánh giá và tối ưu sau triển khai.",
+      "Xác nhận kết thúc dự án."
+    ]
+  }
 ]
