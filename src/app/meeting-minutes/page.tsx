@@ -62,7 +62,7 @@ export default function MeetingMinutesPage() {
           <input
             type="text"
             placeholder="Tìm kiếm nội dung cuộc họp..."
-            className="w-full bg-background border border-primary/10 rounded-2xl py-4 pl-14 pr-6 text-sm outline-none focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all"
+            className="w-full bg-background border border-primary rounded-2xl py-4 pl-14 pr-6 text-sm outline-none focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all"
           />
         </div>
 
@@ -74,7 +74,7 @@ export default function MeetingMinutesPage() {
               key={meeting.id}
               className="group"
             >
-              <div className="bg-background p-6 md:p-8 rounded-[2rem] border border-primary/10 shadow-sm group-hover:shadow-xl group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="bg-background p-6 md:p-8 rounded-[2rem] border border-primary shadow-sm group-hover:shadow-xl group-hover:border-primary/30 group-hover:-translate-y-1 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div className="flex-1 space-y-3">
                   <div className="flex flex-wrap items-center gap-3">
                     <span className="flex items-center gap-1.5 text-[10px] font-black text-primary bg-primary/5 px-3 py-1 rounded-full uppercase tracking-widest">
@@ -103,7 +103,7 @@ export default function MeetingMinutesPage() {
           ))}
 
           {meetingMinutes.length === 0 && (
-            <div className="text-center py-24 bg-background rounded-[2rem] border-2 border-dashed border-primary/10">
+            <div className="text-center py-24 bg-background rounded-[2rem] border-2 border-dashed border-primary">
               <ClipboardList
                 className="mx-auto mb-6 text-foreground/10"
                 size={64}

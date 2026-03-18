@@ -4,18 +4,15 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* 2. Màu chế độ SÁNG (Mã HEX) */
   --background: #fdf3e3;
   --foreground: #020617;
-  --primary: #d5ae6b; /* Xanh lá đậm ban đầu của bạn */
+  --primary: #d5ae6b;
 }
 
-/* 3. Màu chế độ TỐI (Mã HEX) */
-/* Khi class .dark được thêm vào thẻ html, các màu này sẽ ghi đè lên trên */
 .dark {
-  --background: #12182b; /* Màu tối khớp với Navbar cũ của bạn */
+  --background: #12182b;
   --foreground: #fdf3e3;
-  --primary: #d5ae6b; /* Xanh lá sáng hơn để nổi bật trên nền tối */
+  --primary: #5f1531;
 }
 
 /* 4. Áp dụng biến vào hệ thống Theme của Tailwind */
@@ -24,7 +21,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
 
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -32,8 +29,9 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  /* Thêm transition để lúc đổi màu trông mượt hơn, không bị giật bộp một cái */
+
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
   transition:
     background-color 0.3s ease,
     color 0.3s ease;

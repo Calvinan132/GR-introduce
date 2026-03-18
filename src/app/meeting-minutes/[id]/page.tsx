@@ -69,13 +69,13 @@ export default function MeetingMinuteDetailPage() {
             </h1>
 
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary/10 shadow-sm">
+              <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary shadow-sm">
                 <Calendar size={14} className="shrink-0" />
                 <span className="text-[11px] font-black uppercase tracking-widest">
                   {new Date(meeting.date).toLocaleDateString("vi-VN")}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-background border border-primary/10 px-4 py-2 rounded-full shadow-sm">
+              <div className="flex items-center gap-2 bg-background border border-primary px-4 py-2 rounded-full shadow-sm">
                 <Info size={14} className="text-foreground/40 shrink-0" />
                 <span className="text-[11px] font-bold text-foreground/60 uppercase tracking-widest truncate max-w-[300px] md:max-w-xl">
                   {meeting.description}
@@ -107,9 +107,9 @@ export default function MeetingMinuteDetailPage() {
               </a>
             </div>
 
-            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary/10 overflow-hidden h-[800px] relative">
+            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary overflow-hidden h-[800px] relative">
               {/* Browser Bar Fake */}
-              <div className="absolute top-0 left-0 w-full p-3 bg-primary/5 border-b border-primary/10 flex gap-2 z-10 backdrop-blur-md">
+              <div className="absolute top-0 left-0 w-full p-3 bg-primary/5 border-b border-primary flex gap-2 z-10 backdrop-blur-md">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-400/40" />
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/40" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400/40" />
@@ -143,9 +143,9 @@ export default function MeetingMinuteDetailPage() {
               </a>
             </div>
 
-            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary/10 overflow-hidden h-[800px] relative">
+            <div className="bg-background rounded-[2rem] shadow-2xl border border-primary overflow-hidden h-[800px] relative">
               {/* Browser Bar Fake */}
-              <div className="absolute top-0 left-0 w-full p-3 bg-blue-500/5 border-b border-primary/10 flex gap-2 z-10 backdrop-blur-md">
+              <div className="absolute top-0 left-0 w-full p-3 bg-blue-500/5 border-b border-primary flex gap-2 z-10 backdrop-blur-md">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-400/40" />
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/40" />
                 <div className="w-2.5 h-2.5 rounded-full bg-green-400/40" />

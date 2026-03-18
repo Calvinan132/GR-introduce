@@ -128,7 +128,7 @@ const GreenTeamContent = () => {
 
       {/* ABOUT OUR TEAM SECTION */}
       <section className="max-w-7xl mx-auto px-4 -mt-16 relative z-20">
-        <div className="bg-background p-8 md:p-12 rounded-3xl shadow-xl border border-primary/10 transition-colors box-border relative overflow-hidden">
+        <div className="bg-background p-8 md:p-12 rounded-3xl shadow-xl border border-primary transition-colors box-border relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div className="space-y-6">
               <div>
@@ -185,7 +185,7 @@ const GreenTeamContent = () => {
         ref={teamRef}
         className="max-w-7xl mx-auto px-4 py-12 relative z-20"
       >
-        <div className="bg-background p-8 rounded-3xl shadow-xl border border-primary/10 transition-colors">
+        <div className="bg-background p-8 rounded-3xl shadow-xl border border-primary transition-colors">
           <h2 className="text-2xl font-bold text-primary mb-8">
             Thành viên nhóm
           </h2>
@@ -239,7 +239,7 @@ const GreenTeamContent = () => {
             <h3 className="text-2xl font-bold text-primary">
               Giai đoạn thực hiện
             </h3>
-            <div className="bg-background rounded-2xl shadow-sm border border-primary/10 overflow-hidden">
+            <div className="bg-background rounded-2xl shadow-sm border border-primary overflow-hidden">
               <div className="bg-primary/5 p-3 border-b border-primary/10 flex gap-2">
                 {["tiendo", "backlog"].map((tab) => (
                   <button
@@ -278,7 +278,7 @@ const GreenTeamContent = () => {
                   <div className="text-center py-10 opacity-20">
                     <ClipboardList className="mx-auto mb-2" size={40} />
                     <p className="text-xs font-bold uppercase">
-                      Syncing Jira...
+                      Syncing Notion...
                     </p>
                   </div>
                 )}
@@ -303,7 +303,7 @@ const GreenTeamContent = () => {
               </Link>
             </div>
 
-            <div className="bg-background p-6 rounded-3xl border border-primary/10 shadow-sm">
+            <div className="bg-background p-6 rounded-3xl border border-primary shadow-sm">
               <h4 className="font-bold text-sm flex items-center gap-2 mb-4">
                 <ClipboardList size={16} className="text-primary" /> Biên bản
                 họp
@@ -363,7 +363,7 @@ const GreenTeamContent = () => {
               {selectedMember.role}
             </p>
             <div className="bg-primary/5 p-5 rounded-2xl border border-primary/10 mb-8 text-center text-sm italic text-foreground/70">
-              "{selectedMember.desc}"
+              {selectedMember.desc}
             </div>
             <div className="flex justify-center gap-4">
               <button className="flex-1 bg-primary text-white py-2 rounded-full font-bold text-sm shadow-lg hover:scale-105 transition">
