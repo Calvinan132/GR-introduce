@@ -47,6 +47,7 @@ export default function Navbar() {
 
         {/* MENU (Desktop) */}
         <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-wider">
+
           <Link
             href="/?section=product"
             className="text-foreground/70 hover:text-primary transition"
@@ -65,7 +66,12 @@ export default function Navbar() {
           >
             Quản lý
           </Link>
-
+          <Link
+            href="/introduce"
+            className="text-foreground/70 hover:text-primary transition"
+          >
+            Sản phẩm
+          </Link>
           <Link
             href="/timeline"
             className="text-foreground/70 hover:text-primary transition"
