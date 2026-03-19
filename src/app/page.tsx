@@ -86,7 +86,7 @@ const GreenTeamContent = () => {
           </div>
 
           {/* Tiêu đề chính */}
-          <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] uppercase ">
+          <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[1.1] uppercase ">
             Quản Trị <br />
             <span className="text-[#FBBF24] drop-shadow-[0_5px_15px_rgba(251,191,36,0.3)]">
               Thông Minh
