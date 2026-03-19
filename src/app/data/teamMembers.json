@@ -22,7 +22,7 @@
     "name": "Phạm Nhật Khoa",
     "mssv": "23520753",
     "role": "Thành viên",
-    "desc": "Xây dụng SOW , hỗ trợ quản lý tiến độ và rủi ro.",
+    "desc": "Xây dựng backend và đảm bảo chất lượng phần mềm.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/Khoa.jpg"
   },
@@ -32,7 +32,7 @@
     "name": "Trịnh Hoài An",
     "mssv": "24520079",
     "role": "Thành viên",
-    "desc": "Phát triển website giới thiệu nhóm và hỗ trợ xây dựng nội dung truyền thông.",
+    "desc": "Phát triển UI/UX phần mềm và hỗ trợ xây dựng nội dung truyền thông.",
     "color": "from-[#d5ae6b] to-[#b45309]",
     "image": "/assets/An.jpg"
   },
