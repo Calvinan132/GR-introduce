@@ -14,5 +14,21 @@
     "description": "Báo cáo tiến độ công việc, thảo luận về những khó khăn gặp phải và điều chỉnh kế hoạch",
     "minuteDocId": "1OJm9d1csxCK0Jf2peYw-XtHGG-T16AJKNC7GWmD7iLY",
     "assignmentDocId": "1asNVoV16gku3d1SrSCKlseZHyUJf0-zRX9GSnhSuvGM"
+  },
+  {
+    "id": "3",
+    "title": "Biên Bản Họp Tuần 3 - Lập khung dự án",
+    "date": "2026-03-16",
+    "description": "Thực hiện lập khung dự án, phân tích tài chính và lập kế hoạch chi tiết cho các giai đoạn tiếp theo",
+    "minuteDocId": "1FVH3YqTqnt1xYfi9IYbs3tKinubJ5ocAp35Du_JleTc",
+    "assignmentDocId": "1wmIv2FZx5d815J3_hvScjhgDZvVL4YS8fEevkqXR0dQ"
+  },
+  {
+    "id": "4",
+    "title": "Biên Bản Họp Tuần 4 - Báo cáo tiến độ",
+    "date": "2026-03-16",
+    "description": "Báo cáo tiến độ công việc, thảo luận về những khó khăn gặp phải và điều chỉnh kế hoạch",
+    "minuteDocId": "1Ry1SrO2wxSQuskFc85h5pjYp2LcS-QkY9b0EbmF1G0Y",
+    "assignmentDocId": "1wmIv2FZx5d815J3_hvScjhgDZvVL4YS8fEevkqXR0dQ"
   }
 ]

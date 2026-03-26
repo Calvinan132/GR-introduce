@@ -93,7 +93,7 @@ export default function Navbar() {
 
           {/* Nút Backlog nổi bật */}
           <button className="hidden sm:block rounded-full bg-primary px-6 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:shadow-primary/40 active:scale-95">
-            <Link href="https://www.notion.so/3215d99ca12c80a09033ef05b8861321?v=3215d99ca12c80d6b1e7000cb5d757da&source=copy_link">BACKLOG</Link>
+            <Link href="/?section=management">BACKLOG</Link>
           </button>
         </div>
       </div>

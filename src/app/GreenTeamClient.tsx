@@ -24,7 +24,7 @@ interface Props {
 const GreenTeamContent = ({ backlogNode }: Props) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState("tiendo");
+  const [activeTab, setActiveTab] = useState("congcu");
   const [selectedMember, setSelectedMember] = useState<
     (typeof teamMembers)[0] | null
   >(null);
@@ -244,19 +244,62 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
             </h3>
             <div className="bg-background rounded-2xl shadow-sm border border-primary overflow-hidden">
               <div className="bg-primary/5 p-3 border-b border-primary/10 flex gap-2">
-                {["tiendo", "backlog"].map((tab) => (
+                {["congcu", "tiendo", "backlog"].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-6 py-2 rounded-xl text-xs font-black uppercase transition ${activeTab === tab ? "bg-primary text-white" : "text-foreground/40 hover:bg-primary/10"}`}
                   >
-                    {tab === "tiendo" ? "Giai đoạn" : "Backlog"}
+                    {tab === "congcu" ? "Công cụ" : tab === "tiendo" ? "Giai đoạn" : "Backlog"}
                   </button>
                 ))}
               </div>
               <div className="p-6">
-                {activeTab === "tiendo" ? (
+
+                {activeTab === "congcu" && (
                   <div className="space-y-4">
+                    <h1 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">
+                      Các công cụ quản lý dự án nhóm sử dụng
+                    </h1>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-500 font-bold">
+                          <Target size={24} />
+                        </div>
+                        <h3 className="font-bold text-foreground text-lg mb-2">Jira Software</h3>
+                        <p className="text-sm text-foreground/70 leading-relaxed">
+                          Sử dụng để quản lý framework Scrum: theo dõi tiến độ (Backlog, Sprint), giao việc và giám sát chặt chẽ đầu việc của từng thành viên.
+                        </p>
+                      </div>
+
+                      <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4 text-green-500 font-bold">
+                          <ClipboardList size={24} />
+                        </div>
+                        <h3 className="font-bold text-foreground text-lg mb-2">Google Drive</h3>
+                        <p className="text-sm text-foreground/70 leading-relaxed">
+                          Quản lý tài liệu dự án phi tập trung: lưu trữ slide, báo cáo, file thiết kế, và đóng vai trò không gian hợp tác chỉnh sửa chung của nhóm.
+                        </p>
+                      </div>
+
+                      <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                        <div className="w-12 h-12 bg-foreground/10 rounded-xl flex items-center justify-center mb-4 text-foreground font-bold">
+                          <Github size={24} />
+                        </div>
+                        <h3 className="font-bold text-foreground text-lg mb-2">Github</h3>
+                        <p className="text-sm text-foreground/70 leading-relaxed">
+                          Nền tảng kiểm soát phiên bản: quản lý trực tiếp source code phát triển dự án, chia nhánh làm việc và tích hợp các thay đổi thuận tiện.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeTab === "tiendo" && (
+                  <div className="space-y-4">
+                    <h1 className="text-sm font-bold text-primary uppercase tracking-widest">
+                      Các giai đoạn thực hiện chung dự án của nhóm
+                    </h1>
                     {progress.map((item) => (
                       <div
                         key={item.id}
@@ -277,7 +320,9 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                       </div>
                     ))}
                   </div>
-                ) : (
+                )}
+
+                {activeTab === "backlog" && (
                   <div className="bg-background">
                     {backlogNode || (
                       <div className="text-center py-10 opacity-20">
@@ -289,6 +334,8 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                     )}
                   </div>
                 )}
+
+
               </div>
             </div>
           </div>
@@ -311,10 +358,19 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
             </div>
 
             <div className="bg-background p-6 rounded-3xl border border-primary shadow-sm">
-              <h4 className="font-bold text-sm flex items-center gap-2 mb-4">
-                <ClipboardList size={16} className="text-primary" /> Biên bản
-                họp
+              <h4 className="font-bold text-sm flex items-center gap-2 mb-4 flex justify-between">
+                <div className="flex items-center gap-2">
+                  <ClipboardList size={16} className="text-primary" /> Biên bản
+                  họp
+                </div>
+                <Link
+                  href="/meeting-minutes"
+                  className="text-xs font-bold uppercase text-primary hover:underline underline-offset-4"
+                >
+                  XEM TẤT CẢ
+                </Link>
               </h4>
+
               <div className="space-y-2">
                 {meetingMinutes.slice(0, 3).map((item) => (
                   <Link

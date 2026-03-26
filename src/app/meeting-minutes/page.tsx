@@ -48,22 +48,9 @@ export default function MeetingMinutesPage() {
           </div>
           <p className="text-foreground/60 max-w-2xl leading-relaxed font-medium">
             Lưu trữ toàn bộ nội dung thảo luận, các quyết định quan trọng và
-            bảng phân công nhiệm vụ chi tiết của đội ngũ Green5 qua từng giai
+            bảng phân công nhiệm vụ chi tiết của đội ngũ CHEVE qua từng giai
             đoạn.
           </p>
-        </div>
-
-        {/* Search/Filter Bar (Gợi ý thêm để giao diện chuyên nghiệp hơn) */}
-        <div className="relative mb-10 group">
-          <Search
-            className="absolute left-5 top-1/2 -translate-y-1/2 text-foreground/20 group-focus-within:text-primary transition-colors"
-            size={18}
-          />
-          <input
-            type="text"
-            placeholder="Tìm kiếm nội dung cuộc họp..."
-            className="w-full bg-background border border-primary rounded-2xl py-4 pl-14 pr-6 text-sm outline-none focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all"
-          />
         </div>
 
         {/* List of Meetings */}
