@@ -1,21 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { 
-  CalendarCheck, 
-  Users, 
-  Search, 
-  CreditCard, 
-  Settings, 
-  BarChart, 
-  Zap, 
+import {
+  CalendarCheck,
+  Users,
+  Search,
+  CreditCard,
+  Settings,
+  BarChart,
+  Zap,
   ShieldCheck,
-  Ticket
+  Ticket,
+  FolderOpen,
+  FileText,
+  ExternalLink
 } from "lucide-react";
+
+import docs from "../data/docs.json"
 
 export default function IntroducePage() {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -29,7 +34,7 @@ export default function IntroducePage() {
         {/* Decorative elements */}
         <div className="absolute top-0 right-10 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-10 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[80px] pointer-events-none" />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-4">
             <span className="relative flex h-2 w-2">
@@ -56,13 +61,13 @@ export default function IntroducePage() {
       {/* CORE FEATURES SECTION */}
       <section className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-          
+
           {/* Đối với Quản lý */}
           <div className="bg-background rounded-3xl p-8 border border-primary/20 shadow-xl relative overflow-hidden group hover:border-primary/50 transition-colors duration-500">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500 transform group-hover:scale-110">
               <Settings size={180} />
             </div>
-            
+
             <div className="relative z-10">
               <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center shadow-lg mb-6 text-white transform -rotate-3 group-hover:rotate-0 transition-transform">
                 <Settings size={28} />
@@ -71,7 +76,7 @@ export default function IntroducePage() {
               <p className="text-foreground/70 mb-8 leading-relaxed">
                 Hệ thống cho phép người quản lý một cách linh hoạt, đảm bảo sự kiện hoạt động trơn tru với các công cụ tối ưu:
               </p>
-              
+
               <ul className="space-y-4">
                 {[
                   { icon: CalendarCheck, text: "Tạo sự kiện, thiết lập chi tiết thông tin" },
@@ -104,7 +109,7 @@ export default function IntroducePage() {
               <p className="text-foreground/70 mb-8 leading-relaxed">
                 Người dùng có thể dễ dàng tương tác với hệ thống, mang lại sự tiện ích cao nhất trong suốt quá trình sử dụng:
               </p>
-              
+
               <ul className="space-y-4">
                 {[
                   { icon: Search, text: "Dễ dàng tìm kiếm sự kiện yêu thích" },
@@ -157,6 +162,63 @@ export default function IntroducePage() {
               <p className="text-sm text-foreground/60">Đồng thời nâng cao trải nghiệm sự kiện mượt mà và trọn vẹn hơn cho người tham gia.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SPRINTS DOCUMENT SECTION */}
+      <section className="max-w-6xl mx-auto px-4 py-24 relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 mb-4">
+            <FolderOpen size={16} className="text-primary" />
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Tài Liệu Của Team</span>
+          </div>
+          <h2 className="text-3xl font-black tracking-tight uppercase mb-4">Tài liệu dự án theo Sprint</h2>
+          <p className="text-lg text-foreground/70 max-w-2xl mx-auto leading-relaxed">
+            Nơi lưu trữ, quản lý tài liệu, báo cáo tiến độ và các sản phẩm bàn giao của từng giai đoạn phát triển (Sprint).
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {docs?.map((sprint) => (
+            <div key={sprint.id} className="bg-background rounded-3xl p-6 border border-primary/20 shadow-xl hover:border-primary/50 transition-colors group flex flex-col">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <FolderOpen size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">{sprint.name}</h3>
+                    <p className="text-xs text-foreground/60">{sprint.desc}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3 mt-6 flex-grow">
+                <h4 className="text-sm font-semibold uppercase text-foreground/50 tracking-wider">Tài liệu đính kèm</h4>
+                <div className="space-y-2">
+                  {sprint.docs.length > 0 ? (
+                    sprint.docs.map((doc, i) => (
+                      <a
+                        key={i}
+                        href={doc.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3 rounded-xl bg-primary/5 border border-primary/5 hover:bg-primary/15 transition-colors group/doc cursor-pointer shadow-sm"
+                      >
+                        <div className="flex items-center gap-3 overflow-hidden">
+                          <FileText size={18} className="text-primary shrink-0" />
+                          <span className="text-sm font-medium truncate text-foreground/80 group-hover/doc:text-foreground">{doc.name}</span>
+                        </div>
+                        <ExternalLink size={16} className="text-primary/50 group-hover/doc:text-primary shrink-0 opacity-0 group-hover/doc:opacity-100 transition-opacity" />
+                      </a>
+                    ))
+                  ) : (
+                    <p className="text-sm text-foreground/40 italic py-2">Chưa có tài liệu</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

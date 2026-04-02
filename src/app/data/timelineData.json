@@ -29,17 +29,27 @@
   {
     "id": 3,
     "week": "Tuần 3",
-    "title": "Coming soon",
-    "date": "15/03 - 21/03",
+    "title": "Thiết lập khung dự án, phương án đề xuất",
+    "date": "19/03 - 26/03",
     "status": "in-progress",
-    "tasks": [""]
+    "tasks": [
+      "Phân tích và xác định yêu cầu dự án",
+      "Xây dựng kiến trúc hệ thống",
+      "Thiết kế cơ sở dữ liệu",
+      "Lập kế hoạch triển khai",
+      "Làm bảng phương án tối thiểu, tối đa"
+    ]
   },
   {
     "id": 4,
     "week": "Tuần 4",
-    "title": "Coming soon",
+    "title": "Thực hiện chi tiết phương án đề xuất",
     "date": "22/03 - 28/03",
     "status": "pending",
-    "tasks": [""]
+    "tasks": [
+      "Tạo sơ đồ gannt",
+      "Xây dựng WDS",
+      "Làm báo cáo tuần 3"
+    ]
   }
 ]

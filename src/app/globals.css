@@ -12,7 +12,7 @@
 .dark {
   --background: #12182b;
   --foreground: #fdf3e3;
-  --primary: #5f1531;
+  --primary: #42a5f5;
 }
 
 /* 4. Áp dụng biến vào hệ thống Theme của Tailwind */
