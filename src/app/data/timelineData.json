@@ -30,8 +30,8 @@
     "id": 3,
     "week": "Tuần 3",
     "title": "Thiết lập khung dự án, phương án đề xuất",
-    "date": "19/03 - 26/03",
-    "status": "in-progress",
+    "date": "21/03 - 23/03",
+    "status": "completed",
     "tasks": [
       "Phân tích và xác định yêu cầu dự án",
       "Xây dựng kiến trúc hệ thống",
@@ -44,12 +44,32 @@
     "id": 4,
     "week": "Tuần 4",
     "title": "Thực hiện chi tiết phương án đề xuất",
-    "date": "22/03 - 28/03",
-    "status": "pending",
+    "date": "8/04 - 13/04",
+    "status": "completed",
+    "tasks": ["Tạo sơ đồ gannt", "Xây dựng WDS", "Làm báo cáo tuần 2"]
+  },
+  {
+    "id": 5,
+    "week": "Tuần 5",
+    "title": "Lên kế hoạch, phân công, triển khai vẽ các lưu đồ và làm các báo cáo",
+    "date": "14/04 - 21/04",
+    "status": "completed",
     "tasks": [
-      "Tạo sơ đồ gannt",
-      "Xây dựng WDS",
-      "Làm báo cáo tuần 3"
+      "Lên kế hoạch, phân công, triển khai vẽ các lưu đồ",
+      "Làm báo cáo tình trạng dự án",
+      "Làm kế hoạch quản lý phạm vi, thời gian, chi phí và chất lượng dự án FINAL"
+    ]
+  },
+  {
+    "id": 6,
+    "week": "Tuần 6",
+    "title": "Báo cáo tiến độ, điều chỉnh triển khai xây dựng giao diện người dùng ",
+    "date": "22/04 - 28/04",
+    "status": "completed",
+    "tasks": [
+      "Cập nhật tiến độ trên Notion và báo cáo nhóm",
+      "Nhận xét và điều chỉnh kế hoạch tuần 5",
+      "Xây dựng giao diện người dùng"
     ]
   }
 ]

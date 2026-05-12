@@ -1,59 +1,86 @@
 [
-    {
-        "id": 1,
-        "name": "Sprint 1",
-        "desc": "Khởi tạo & Đặc tả yêu cầu",
-        "docs": [
-            {
-                "name": "Project_Charter.docx",
-                "link": "https://docs.google.com/document/d/1FdJB9VSdpIIsnaoOxaDwshzm6mvibvhM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
-            },
-            {
-                "name": "SOW.docx",
-                "link": "https://docs.google.com/document/d/1FdJB9VSdpIIsnaoOxaDwshzm6mvibvhM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
-            },
-            {
-                "name": "ProjectBusinessCase.docx",
-                "link": "https://docs.google.com/document/d/1gkVAh-ekGoaOzIutE64PAVVDitBNQlFM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
-            },
-            {
-                "name": "Khảo sát hiện trạng",
-                "link": "https://drive.google.com/drive/u/0/folders/1etHy7SMT9xYnPkfjNNBke-ZQ-GvVO2yZ"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Sprint 2",
-        "desc": "Thiết kế UI/UX & Database",
-        "docs": [
-            {
-                "name": "Khung dự án.docx",
-                "link": "https://docs.google.com/document/d/1mGFElrcxFz_A4K_Fy31xq3HoCKPsQTKq6SBNi3exKfg/edit?usp=sharing"
-            },
-            {
-                "name": "Phương pháp đề xuất",
-                "link": "https://drive.google.com/drive/u/0/folders/1ixhzQyLvHuzlNYdzLKqu6YEQjo-Y7Y7A"
-            },
-            {
-                "name": "Phân tích tài chính",
-                "link": "https://drive.google.com/drive/u/0/folders/1ixhzQyLvHuzlNYdzLKqu6YEQjo-Y7Y7A"
-            },
-            {
-                "name": "Phương án thực hiện",
-                "link": "https://drive.google.com/drive/u/0/folders/1HeXzvcZyIJ35fnDfhYwO2l5Xhf3e81Dz"
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Sprint 3",
-        "desc": "Phát triển Tính năng Cốt lõi",
-        "docs": [
-            {
-                "name": "Comming soon",
-                "link": ""
-            }
-        ]
-    }
+  {
+    "id": 1,
+    "name": "Sprint 1",
+    "desc": "Khởi tạo & Đặc tả yêu cầu",
+    "docs": [
+      {
+        "name": "Project_Charter.docx",
+        "link": "https://docs.google.com/document/d/1FdJB9VSdpIIsnaoOxaDwshzm6mvibvhM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "SOW.docx",
+        "link": "https://docs.google.com/document/d/1FdJB9VSdpIIsnaoOxaDwshzm6mvibvhM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "ProjectBusinessCase.docx",
+        "link": "https://docs.google.com/document/d/1gkVAh-ekGoaOzIutE64PAVVDitBNQlFM/edit?usp=sharing&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "Khảo sát hiện trạng",
+        "link": "https://drive.google.com/drive/u/0/folders/1etHy7SMT9xYnPkfjNNBke-ZQ-GvVO2yZ"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sprint 2",
+    "desc": "Thiết kế UI/UX & Database",
+    "docs": [
+      {
+        "name": "Khung dự án.docx",
+        "link": "https://docs.google.com/document/d/1mGFElrcxFz_A4K_Fy31xq3HoCKPsQTKq6SBNi3exKfg/edit?usp=sharing"
+      },
+      {
+        "name": "Phương pháp đề xuất",
+        "link": "https://drive.google.com/drive/u/0/folders/1ixhzQyLvHuzlNYdzLKqu6YEQjo-Y7Y7A"
+      },
+      {
+        "name": "Phân tích tài chính",
+        "link": "https://drive.google.com/drive/u/0/folders/1ixhzQyLvHuzlNYdzLKqu6YEQjo-Y7Y7A"
+      },
+      {
+        "name": "Phương án thực hiện",
+        "link": "https://drive.google.com/drive/u/0/folders/1HeXzvcZyIJ35fnDfhYwO2l5Xhf3e81Dz"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Sprint 3",
+    "desc": "Phát triển Tính năng Cốt lõi",
+    "docs": [
+      {
+        "name": "Các lưu đồ",
+        "link": "https://drive.google.com/drive/folders/1xa-8sfS7Mk90wW62WtcLZY1vavep5R8O?usp=sharing"
+      },
+      {
+        "name": "Báo cáo tình trạng dự án",
+        "link": "https://docs.google.com/document/d/1zm_Mldxc9KIiBP7gtYCUOg59c6M0bfbY-G9r-hl0koY/edit?usp=drive_link"
+      },
+      {
+        "name": "Giao diện người dùng",
+        "link": "https://docs.google.com/document/d/1neG8qoQfxFeGMFjUP5LG6bprceGCbwPoA4lTSwzhoeI/edit?usp=drive_link"
+      },
+      {
+        "name": "Kế hoạch quản lý phạm vi, thời gian, chi phí và chất lượng dự án FINAL",
+        "link": "https://docs.google.com/document/d/1A7g0kDE_8So49w0xIMYv7e2aJW2ePflkSemMM_Lg53w/edit?usp=drive_link"
+      },
+      {
+        "name": "KẾ HOẠCH QUẢN LÝ RỦI RO DỰ ÁN, truyền thông nội bộ, báo cáo công việc và xung đột nội bộ. ",
+        "link": "https://drive.google.com/drive/folders/11aGh3yNXjq8cfQ3mjzaTEaapLDr87ll4?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Sprint 4",
+    "desc": "Thiết kế UI/UX & Database",
+    "docs": [
+      {
+        "name": "Comming soon",
+        "link": ""
+      }
+    ]
+  }
 ]
