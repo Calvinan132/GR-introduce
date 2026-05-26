@@ -308,7 +308,7 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                           </p>
                         </div>
                         <a
-                          href={GITHUB_REPO_URL}
+                          href={process.env.GITHUB_REPO_URL}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-primary hover:underline mt-auto"
