@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "week": "Tuần 1",
+    "week": "Giai đoạn 1 - Sprint 1",
     "title": "Khởi động dự án & Lập kế hoạch",
-    "date": "05/03 - 12/03",
+    "date": "05/03 - 19/03",
     "status": "completed",
     "tasks": [
       "Họp kick-off nhóm",
@@ -12,64 +12,67 @@
       "Tạo webite giới thiệu nhóm",
       "Xây dựng SOW",
       "Xây dựng Project Charter",
-      "Lập bảng câu hỏi phỏng vấn khảo sát hiện trạng"
-    ]
-  },
-  {
-    "id": 2,
-    "week": "Tuần 2",
-    "title": "Báo cáo tiến độ làm việc & điều chỉnh tuần 1",
-    "date": "12/03 - 19/03",
-    "status": "completed",
-    "tasks": [
+      "Lập bảng câu hỏi phỏng vấn khảo sát hiện trạng",
       "Cập nhật tiến độ trên Notion và báo cáo nhóm",
       "Nhận xét và điều chỉnh kế hoạch tuần 1"
     ]
   },
   {
-    "id": 3,
-    "week": "Tuần 3",
+    "id": 2,
+    "week": "Giai đoạn 2 - Sprint 2",
     "title": "Thiết lập khung dự án, phương án đề xuất",
-    "date": "21/03 - 23/03",
+    "date": "21/03 - 13/04",
     "status": "completed",
     "tasks": [
       "Phân tích và xác định yêu cầu dự án",
       "Xây dựng kiến trúc hệ thống",
       "Thiết kế cơ sở dữ liệu",
       "Lập kế hoạch triển khai",
-      "Làm bảng phương án tối thiểu, tối đa"
+      "Làm bảng phương án tối thiểu, tối đa",
+      "Tạo sơ đồ gannt",
+      "Xây dựng WDS",
+      "Làm báo cáo tuần 2"
     ]
   },
   {
-    "id": 4,
-    "week": "Tuần 4",
-    "title": "Thực hiện chi tiết phương án đề xuất",
-    "date": "8/04 - 13/04",
-    "status": "completed",
-    "tasks": ["Tạo sơ đồ gannt", "Xây dựng WDS", "Làm báo cáo tuần 2"]
-  },
-  {
-    "id": 5,
-    "week": "Tuần 5",
+    "id": 3,
+    "week": "Giai đoạn 3 - Sprint 3",
     "title": "Lên kế hoạch, phân công, triển khai vẽ các lưu đồ và làm các báo cáo",
-    "date": "14/04 - 21/04",
+    "date": "14/04 - 28/04",
     "status": "completed",
     "tasks": [
       "Lên kế hoạch, phân công, triển khai vẽ các lưu đồ",
       "Làm báo cáo tình trạng dự án",
-      "Làm kế hoạch quản lý phạm vi, thời gian, chi phí và chất lượng dự án FINAL"
-    ]
-  },
-  {
-    "id": 6,
-    "week": "Tuần 6",
-    "title": "Báo cáo tiến độ, điều chỉnh triển khai xây dựng giao diện người dùng ",
-    "date": "22/04 - 28/04",
-    "status": "completed",
-    "tasks": [
+      "Làm kế hoạch quản lý phạm vi, thời gian, chi phí và chất lượng dự án FINAL",
       "Cập nhật tiến độ trên Notion và báo cáo nhóm",
       "Nhận xét và điều chỉnh kế hoạch tuần 5",
       "Xây dựng giao diện người dùng"
+    ]
+  },
+  {
+    "id": 4,
+    "week": "Giai đoạn 4 - Sprint 4",
+    "title": "Rà soát tiến độ & Điều chỉnh kế hoạch",
+    "date": "29/04 - 12/05",
+    "status": "completed",
+    "tasks": [
+      "Rà soát tiến độ dự án",
+      "Điều chỉnh kế hoạch dự án",
+      "Lập kế hoạch quản lý rủi ro dự án, truyền thông nội bộ, báo cáo công việc và xung đột nội bộ.",
+      "Cập nhật tiến độ trên Notion và báo cáo nhóm",
+      "Hoàn thiện chức năng cốt lỗi"
+    ]
+  },
+  {
+    "id": 5,
+    "week": "Giai đoạn 5 - Sprint 5",
+    "title": "Điều chỉnh tài liệu và hoàn thiện báo cáo cuối kỳ",
+    "date": "13/05 - 26/05",
+    "status": "in-progress",
+    "tasks": [
+      "Hoàn thiện báo cáo cuối kỳ",
+      "Làm slide báo cáo ",
+      "Cập nhật tiến độ JIRA, Cập web giới thiệu nhóm"
     ]
   }
 ]

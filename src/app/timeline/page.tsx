@@ -122,7 +122,7 @@ const TimelinePage = () => {
         {/* FOOTER TIMELINE */}
         <div className="mt-24 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary text-primary font-black text-[10px] uppercase tracking-widest">
-            <Flag size={14} /> Điểm kết thúc dự án: Giai đoạn 1
+            <Flag size={14} /> Điểm kết thúc dự án
           </div>
         </div>
       </div>

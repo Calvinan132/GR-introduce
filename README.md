@@ -1,4 +1,4 @@
-# 🍃 GreenTeam - Quản Trị Dự Án Phần Mềm 
+# 🍃 GreenTeam - Quản Trị Dự Án Phần Mềm
 
 ![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
@@ -11,13 +11,13 @@ Chào mừng đến với hệ thống quản lý và giới thiệu dự án c�
 
 ## 👥 Đội Ngũ Thành Viên
 
-| Thành viên           | MSSV       | Vai trò       | Trách nhiệm chính                                                           |
-| :------------------- | :--------- | :------------ | :-------------------------------------------------------------------------- |
-| **Tạ Duy Phúc**      | `22521140` | Trưởng nhóm   | Điều phối dự án, quản lý phạm vi và tiến độ tuần.                           |
-| **Huỳnh Bảo Hân**    | `24520446` | Thư ký        | Tổng hợp biên bản họp, quản lý tài liệu và hỗ trợ truyền thông nội bộ.      |
-| **Phạm Nhật Khoa**   | `23520753` | Thành viên    | Xây dụng SOW, hỗ trợ quản lý tiến độ và rủi ro.                             |
-| **Trịnh Hoài An**    | `24520079` | Thành viên    | Phát triển website giới thiệu nhóm và hỗ trợ xây dựng nội dung truyền thông.|
-| **Nguyễn Nhật Tân**  | `24521580` | Thành viên    | Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.                    |
+| Thành viên          | MSSV       | Vai trò     | Trách nhiệm chính                                                            |
+| :------------------ | :--------- | :---------- | :--------------------------------------------------------------------------- |
+| **Tạ Duy Phúc**     | `22521140` | Trưởng nhóm | Điều phối dự án, quản lý phạm vi và tiến độ tuần.                            |
+| **Huỳnh Bảo Hân**   | `24520446` | Thư ký      | Tổng hợp biên bản họp, quản lý tài liệu và hỗ trợ truyền thông nội bộ.       |
+| **Phạm Nhật Khoa**  | `23520753` | Thành viên  | Xây dụng SOW, hỗ trợ quản lý tiến độ và rủi ro.                              |
+| **Trịnh Hoài An**   | `24520079` | Thành viên  | Phát triển website giới thiệu nhóm và hỗ trợ xây dựng nội dung truyền thông. |
+| **Nguyễn Nhật Tân** | `24521580` | Thành viên  | Kiểm thử sản phẩm và thực hiện video, nội dung quảng bá.                     |
 
 ---
 
@@ -63,31 +63,39 @@ Dự án được thiết kế xoay quanh 4 giai đoạn chính yếu:
 ## 💻 Hướng Dẫn Cài Đặt & Khởi Chạy
 
 ### Yêu cầu hệ thống
+
 - Node.js (phiên bản `>= 18.x`)
 - npm hoặc yarn
 
 ### Các bước cài đặt
 
 1. **Clone repository:**
+
    ```bash
    git clone https://github.com/user-name/green-team-web.git
    cd green-team-web
    ```
 
 2. **Cài đặt dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Cấu hình kết nối Notion API (`.env.local`):**
    Tạo file `.env.local` ở thư mục gốc và thêm các Key:
+
    ```env
-   NOTION_API_KEY=your_notion_api_key_here
-   DATABASE_ID=your_notion_database_id_here
+   JIRA_DOMAIN=
+   JIRA_EMAIL=
+   JIRA_API_TOKEN=
+   JIRA_PROJECT_KEY=
+
    ```
 
-4. **Đồng bộ dữ liệu Task từ Workspace Notion:**
+4. **Đồng bộ dữ liệu Task từ Workspace JIRA:**
    Chạy script quản trị dữ liệu ở thư mục scripts để lấy các dữ liệu JSON về cục bộ:
+
    ```bash
    npm run fetch-tasks
    ```
@@ -96,4 +104,4 @@ Dự án được thiết kế xoay quanh 4 giai đoạn chính yếu:
    ```bash
    npm run dev
    ```
-   *Truy cập [http://localhost:3000](http://localhost:3000) để tải toàn bộ giao diện và kiểm thử website.*
+   _Truy cập [http://localhost:3000](http://localhost:3000) để tải toàn bộ giao diện và kiểm thử website._

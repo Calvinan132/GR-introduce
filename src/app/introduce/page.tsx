@@ -13,7 +13,9 @@ import {
   Ticket,
   FolderOpen,
   FileText,
-  ExternalLink
+  ExternalLink,
+  Github,
+  GitBranch
 } from "lucide-react";
 
 import docs from "../data/docs.json"
@@ -55,6 +57,18 @@ export default function IntroducePage() {
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed mt-6">
             Dự án này nhằm xây dựng một hệ thống để hỗ trợ các tổ chức hoặc cá nhân trong việc tổ chức và quản lý các sự kiện một cách thông minh và tối ưu.
           </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <a
+              href="https://github.com/Calvinan132/GR-introduce"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-primary text-white font-bold text-sm hover:scale-105 hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all duration-300 dark:text-background"
+            >
+              <Github size={18} />
+              GitHub Sản Phẩm
+            </a>
+          </div>
         </div>
       </header>
 
@@ -165,6 +179,88 @@ export default function IntroducePage() {
         </div>
       </section>
 
+      {/* PRODUCT GITHUB REPOSITORY SECTION */}
+      <section className="max-w-6xl mx-auto px-4 py-16 relative z-10">
+        <div className="bg-gradient-to-br from-primary/10 via-background to-primary/5 rounded-[2.5rem] p-8 md:p-12 border border-primary/20 shadow-2xl relative overflow-hidden group">
+          {/* Decorative glowing gradient */}
+          <div className="absolute -top-24 -right-24 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-700" />
+          <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-700" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            {/* Left: Info */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5">
+                <Github size={14} className="text-primary" />
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">Open Source Product</span>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
+                Mã nguồn dự án <br />
+                <span className="text-primary">Được Công Khai Trên GitHub</span>
+              </h2>
+
+              <p className="text-foreground/70 leading-relaxed max-w-xl">
+                Chúng tôi quản lý toàn bộ vòng đời phát triển phần mềm (SDLC) một cách minh bạch thông qua nền tảng GitHub. Dự án được áp dụng mô hình Git Flow chuẩn hóa, đảm bảo tính nhất quán, bảo mật và chất lượng mã nguồn cao.
+              </p>
+
+              {/* Badges/Stats */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+                <div className="bg-background/50 border border-primary/10 p-3 rounded-2xl text-center backdrop-blur-sm">
+                  <div className="text-xs text-foreground/50 font-bold uppercase tracking-wider mb-1">Ngôn ngữ</div>
+                  <div className="text-sm font-black text-primary">TypeScript</div>
+                </div>
+                <div className="bg-background/50 border border-primary/10 p-3 rounded-2xl text-center backdrop-blur-sm">
+                  <div className="text-xs text-foreground/50 font-bold uppercase tracking-wider mb-1">Phiên bản</div>
+                  <div className="text-sm font-black text-primary">v1.0.0</div>
+                </div>
+                <div className="bg-background/50 border border-primary/10 p-3 rounded-2xl text-center backdrop-blur-sm">
+                  <div className="text-xs text-foreground/50 font-bold uppercase tracking-wider mb-1">Giấy phép</div>
+                  <div className="text-sm font-black text-primary">MIT License</div>
+                </div>
+                <div className="bg-background/50 border border-primary/10 p-3 rounded-2xl text-center backdrop-blur-sm">
+                  <div className="text-xs text-foreground/50 font-bold uppercase tracking-wider mb-1">Trạng thái</div>
+                  <div className="text-sm font-black text-primary">Public</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: CTA Card */}
+            <div className="lg:col-span-5 flex justify-center">
+              <div className="w-full max-w-sm bg-background/60 border border-primary/30 p-8 rounded-3xl backdrop-blur-xl shadow-2xl relative group/card hover:border-primary/60 transition-all duration-500 hover:-translate-y-1">
+                {/* Glowing glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none" />
+
+                <div className="flex flex-col items-center text-center space-y-6 relative z-10">
+                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-inner group-hover/card:scale-110 transition-transform duration-500">
+                    <Github size={44} />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-xl font-bold mb-1">Calvinan132/GR-introduce</h3>
+                    <p className="text-xs text-foreground/50 flex items-center justify-center gap-1">
+                      <GitBranch size={12} className="text-primary" /> branch: <strong>main</strong>
+                    </p>
+                  </div>
+
+                  <p className="text-xs text-foreground/60 leading-relaxed">
+                    Tải về mã nguồn, nhân bản dự án (clone) hoặc đóng góp (contribute) trực tiếp thông qua pull request trên hệ thống của chúng tôi.
+                  </p>
+
+                  <a
+                    href="https://github.com/Calvinan132/GR-introduce"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 px-6 rounded-2xl font-black text-sm uppercase tracking-wider shadow-lg hover:shadow-primary/30 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 dark:text-background"
+                  >
+                    Truy Cập Repository <ExternalLink size={14} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SPRINTS DOCUMENT SECTION */}
       <section className="max-w-6xl mx-auto px-4 py-24 relative z-10">
         <div className="text-center mb-16">
@@ -197,21 +293,31 @@ export default function IntroducePage() {
                 <h4 className="text-sm font-semibold uppercase text-foreground/50 tracking-wider">Tài liệu đính kèm</h4>
                 <div className="space-y-2">
                   {sprint.docs.length > 0 ? (
-                    sprint.docs.map((doc, i) => (
-                      <a
-                        key={i}
-                        href={doc.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-between p-3 rounded-xl bg-primary/5 border border-primary/5 hover:bg-primary/15 transition-colors group/doc cursor-pointer shadow-sm"
-                      >
-                        <div className="flex items-center gap-3 overflow-hidden">
-                          <FileText size={18} className="text-primary shrink-0" />
-                          <span className="text-sm font-medium truncate text-foreground/80 group-hover/doc:text-foreground">{doc.name}</span>
+                    sprint.docs.map((doc, i) => {
+                      return "link" in doc && doc.link ? (
+                        <a
+                          key={i}
+                          href={doc.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between p-3 rounded-xl bg-primary/5 border border-primary/5 hover:bg-primary/15 transition-colors group/doc cursor-pointer shadow-sm"
+                        >
+                          <div className="flex items-center gap-3 overflow-hidden">
+                            <FileText size={18} className="text-primary shrink-0" />
+                            <span className="text-sm font-medium truncate text-foreground/80 group-hover/doc:text-foreground">{doc.name}</span>
+                          </div>
+                          <ExternalLink size={16} className="text-primary/50 group-hover/doc:text-primary shrink-0 opacity-0 group-hover/doc:opacity-100 transition-opacity" />
+                        </a>
+                      ) : (
+                        <div
+                          key={i}
+                          className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/5 shadow-sm text-foreground/40 italic text-sm"
+                        >
+                          <FileText size={18} className="shrink-0" />
+                          <span>{doc.name}</span>
                         </div>
-                        <ExternalLink size={16} className="text-primary/50 group-hover/doc:text-primary shrink-0 opacity-0 group-hover/doc:opacity-100 transition-opacity" />
-                      </a>
-                    ))
+                      );
+                    })
                   ) : (
                     <p className="text-sm text-foreground/40 italic py-2">Chưa có tài liệu</p>
                   )}

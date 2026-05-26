@@ -250,12 +250,15 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                     onClick={() => setActiveTab(tab)}
                     className={`px-6 py-2 rounded-xl text-xs font-black uppercase transition ${activeTab === tab ? "bg-primary text-white" : "text-foreground/40 hover:bg-primary/10"}`}
                   >
-                    {tab === "congcu" ? "Công cụ" : tab === "tiendo" ? "Giai đoạn" : "Backlog"}
+                    {tab === "congcu"
+                      ? "Công cụ"
+                      : tab === "tiendo"
+                        ? "Giai đoạn"
+                        : "Backlog"}
                   </button>
                 ))}
               </div>
               <div className="p-6">
-
                 {activeTab === "congcu" && (
                   <div className="space-y-4">
                     <h1 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">
@@ -266,9 +269,13 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                         <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 text-blue-500 font-bold">
                           <Target size={24} />
                         </div>
-                        <h3 className="font-bold text-foreground text-lg mb-2">Jira Software</h3>
+                        <h3 className="font-bold text-foreground text-lg mb-2">
+                          Jira Software
+                        </h3>
                         <p className="text-sm text-foreground/70 leading-relaxed">
-                          Sử dụng để quản lý framework Scrum: theo dõi tiến độ (Backlog, Sprint), giao việc và giám sát chặt chẽ đầu việc của từng thành viên.
+                          Sử dụng để quản lý framework Scrum: theo dõi tiến độ
+                          (Backlog, Sprint), giao việc và giám sát chặt chẽ đầu
+                          việc của từng thành viên.
                         </p>
                       </div>
 
@@ -276,20 +283,38 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                         <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4 text-green-500 font-bold">
                           <ClipboardList size={24} />
                         </div>
-                        <h3 className="font-bold text-foreground text-lg mb-2">Google Drive</h3>
+                        <h3 className="font-bold text-foreground text-lg mb-2">
+                          Google Drive
+                        </h3>
                         <p className="text-sm text-foreground/70 leading-relaxed">
-                          Quản lý tài liệu dự án phi tập trung: lưu trữ slide, báo cáo, file thiết kế, và đóng vai trò không gian hợp tác chỉnh sửa chung của nhóm.
+                          Quản lý tài liệu dự án phi tập trung: lưu trữ slide,
+                          báo cáo, file thiết kế, và đóng vai trò không gian hợp
+                          tác chỉnh sửa chung của nhóm.
                         </p>
                       </div>
 
-                      <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
-                        <div className="w-12 h-12 bg-foreground/10 rounded-xl flex items-center justify-center mb-4 text-foreground font-bold">
-                          <Github size={24} />
+                      <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1 flex flex-col justify-between">
+                        <div>
+                          <div className="w-12 h-12 bg-foreground/10 rounded-xl flex items-center justify-center mb-4 text-foreground font-bold">
+                            <Github size={24} />
+                          </div>
+                          <h3 className="font-bold text-foreground text-lg mb-2">
+                            Github
+                          </h3>
+                          <p className="text-sm text-foreground/70 leading-relaxed mb-4">
+                            Nền tảng kiểm soát phiên bản: quản lý trực tiếp
+                            source code phát triển dự án, chia nhánh làm việc và
+                            tích hợp các thay đổi thuận tiện.
+                          </p>
                         </div>
-                        <h3 className="font-bold text-foreground text-lg mb-2">Github</h3>
-                        <p className="text-sm text-foreground/70 leading-relaxed">
-                          Nền tảng kiểm soát phiên bản: quản lý trực tiếp source code phát triển dự án, chia nhánh làm việc và tích hợp các thay đổi thuận tiện.
-                        </p>
+                        <a
+                          href={GITHUB_REPO_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-xs font-black uppercase text-primary hover:underline mt-auto"
+                        >
+                          Truy cập Repo <ExternalLink size={12} />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -334,8 +359,6 @@ const GreenTeamContent = ({ backlogNode }: Props) => {
                     )}
                   </div>
                 )}
-
-
               </div>
             </div>
           </div>

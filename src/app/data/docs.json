@@ -67,7 +67,7 @@
         "link": "https://docs.google.com/document/d/1A7g0kDE_8So49w0xIMYv7e2aJW2ePflkSemMM_Lg53w/edit?usp=drive_link"
       },
       {
-        "name": "KẾ HOẠCH QUẢN LÝ RỦI RO DỰ ÁN, truyền thông nội bộ, báo cáo công việc và xung đột nội bộ. ",
+        "name": "Kế hoạch quản lý rủi ro dự án, truyền thông nội bộ, báo cáo công việc và xung đột nội bộ.",
         "link": "https://drive.google.com/drive/folders/11aGh3yNXjq8cfQ3mjzaTEaapLDr87ll4?usp=drive_link"
       }
     ]
@@ -75,11 +75,60 @@
   {
     "id": 4,
     "name": "Sprint 4",
-    "desc": "Thiết kế UI/UX & Database",
+    "desc": "Rà soát tiến độ & Điều chỉnh kế hoạch",
     "docs": [
       {
-        "name": "Comming soon",
-        "link": ""
+        "name": "Tình trạng dự án",
+        "link": "https://docs.google.com/document/d/1gKox5dmWNmLX70chqA4JnZpOGEvqp0vy6mzHgrAGACE/edit?usp=sharing"
+      },
+      {
+        "name": "Rà soát rủi ro và issue log",
+        "link": "https://docs.google.com/document/d/1nuKN5-45YfLNNSNAISLmxjlQ-ZhS-XsL/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "Đánh giá tiến độ dự án về thời gian",
+        "link": "https://docs.google.com/document/d/1Zlca3EDiPLODxoAyZ06hpRvBTawne8ev/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "Change request form",
+        "link": "https://docs.google.com/document/d/1yuwXj3z2-dqxhEKNd7i18S9CTUXXEPWCtjLgUbefJmE/edit?usp=drive_link"
+      },
+      {
+        "name": "Bảng phần trăm hoàn thành WBS",
+        "link": "https://docs.google.com/spreadsheets/d/1ErzPlxqRp5iN2FpIk10gM31Oie2Jhlub/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sprint 5",
+    "desc": "Chỉnh sửa và Hoàn thiện sản phẩm",
+    "docs": [
+      {
+        "name": "Sơ đồ gannt sau thay đổi",
+        "link": "https://drive.google.com/file/d/1CTQeUdoASM87SgUCwjGjtctbMCSWD5Ko/view?usp=drive_link"
+      },
+      {
+        "name": "Báo cáo tình trạng dự án sau thay đổi",
+        "link": "https://docs.google.com/document/d/1EFJi24jdAM3O9XaCNSdxmfBydmwui8UM/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "Báo cáo phân tích rủi ro định tính",
+        "link": "https://docs.google.com/document/d/1nkD6_hDxA4Vxa3dhDc1vlTT4yCnsnodm/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      },
+      {
+        "name": "Đánh giá rủi ro sau thay đổi",
+        "link": "https://docs.google.com/document/d/14ihMbLFQo_nrl4S1xu5vzwZMqO-gKQ3g/edit?usp=drive_link&ouid=113891789462257929194&rtpof=true&sd=true"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Sprint 6",
+    "desc": "Sprint dự phòng",
+    "docs": [
+      {
+        "name": "Chưa có tài liệu nào được cập nhật"
       }
     ]
   }
