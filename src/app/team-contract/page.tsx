@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ScrollReveal } from "../components";
 import {
   ExternalLink,
   Users,
@@ -12,6 +13,7 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+
 
 export default function TeamContractPage() {
   const googleDocsId = "1j0DnkMeIaaE1lSh7j4jjGskQXgfapHSa";
@@ -41,19 +43,21 @@ export default function TeamContractPage() {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500 pb-20">
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* HEADER SECTION */}
-        <div className="mb-16 text-center">
-          <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 uppercase">
-            Team Working <span className="text-primary">Contract</span>
-          </h1>
-          <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-6" />
-          <p className="text-foreground/50 font-medium max-w-2xl mx-auto text-sm uppercase tracking-widest">
-            Nguyên tắc làm việc và cam kết chất lượng của đội ngũ Green5
-          </p>
-        </div>
+        <ScrollReveal animation="fade-down" duration={800}>
+          <div className="mb-16 text-center">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-4 uppercase">
+              Team Working <span className="text-primary">Contract</span>
+            </h1>
+            <div className="w-24 h-1.5 bg-primary mx-auto rounded-full mb-6" />
+            <p className="text-foreground/50 font-medium max-w-2xl mx-auto text-sm uppercase tracking-widest">
+              Nguyên tắc làm việc và cam kết chất lượng của đội ngũ Green5
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* LEFT: DOCUMENT VIEWER */}
-          <div className="lg:col-span-7 space-y-6">
+          <ScrollReveal animation="fade-right" duration={900} className="lg:col-span-7 space-y-6">
             <div className="flex items-center justify-between bg-background border border-primary p-5 rounded-3xl shadow-sm">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1.5 mr-2">
@@ -83,92 +87,98 @@ export default function TeamContractPage() {
                 allowFullScreen
               />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* RIGHT: STRUCTURED CONTENT */}
           <div className="lg:col-span-5 space-y-8">
             {/* 1. Principles */}
-            <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
-              <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
-                <Users className="text-primary" size={22} /> Nguyên tắc làm việc
-              </h3>
-              <ul className="space-y-4">
-                {principles.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 group">
-                    <CheckCircle2
-                      size={18}
-                      className="text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform"
-                    />
-                    <span className="text-sm text-foreground/70 italic font-medium">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            <ScrollReveal animation="fade-left" delay={100} duration={800}>
+              <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
+                <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
+                  <Users className="text-primary" size={22} /> Nguyên tắc làm việc
+                </h3>
+                <ul className="space-y-4">
+                  {principles.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 group">
+                      <CheckCircle2
+                        size={18}
+                        className="text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform"
+                      />
+                      <span className="text-sm text-foreground/70 italic font-medium">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </ScrollReveal>
 
             {/* 2. Meeting Rules */}
-            <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
-              <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
-                <Calendar className="text-primary" size={22} /> Lịch họp nhóm
-              </h3>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin size={18} className="text-primary" />
+            <ScrollReveal animation="fade-left" delay={200} duration={800}>
+              <section className="bg-background border border-primary p-8 rounded-[2rem] shadow-sm">
+                <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight">
+                  <Calendar className="text-primary" size={22} /> Lịch họp nhóm
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <MapPin size={18} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">
+                        Địa điểm
+                      </p>
+                      <p className="text-sm font-bold opacity-80">
+                        Online (Meet) / Offline tại UIT
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">
-                      Địa điểm
-                    </p>
-                    <p className="text-sm font-bold opacity-80">
-                      Online (Meet) / Offline tại UIT
-                    </p>
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
+                      <Calendar size={18} className="text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">
+                        Tần suất
+                      </p>
+                      <p className="text-sm font-bold opacity-80">
+                        Cố định 1 lần/tuần (Báo cáo & Gỡ rối)
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Calendar size={18} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-black uppercase text-primary tracking-widest mb-1">
-                      Tần suất
-                    </p>
-                    <p className="text-sm font-bold opacity-80">
-                      Cố định 1 lần/tuần (Báo cáo & Gỡ rối)
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
+              </section>
+            </ScrollReveal>
 
             {/* 3. Rewards & Penalties */}
-            <section className="bg-primary p-8 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight relative z-10">
-                <Gavel className="text-[#FBBF24]" size={22} /> Thưởng & Phạt
-              </h3>
-              <div className="space-y-4 relative z-10">
-                <div className="p-4 bg-white/10 rounded-2xl border border-white/10">
-                  <p className="font-black text-[10px] uppercase text-[#FBBF24] tracking-widest flex items-center gap-2 mb-2">
-                    <Coffee size={14} /> Đặc quyền thưởng
-                  </p>
-                  <p className="text-xs font-medium leading-relaxed opacity-90">
-                    Hoàn thành xuất sắc nhiệm vụ sẽ được 1 tràng vỗ tay của cả
-                    nhóm
-                  </p>
+            <ScrollReveal animation="fade-left" delay={300} duration={800}>
+              <section className="bg-primary p-8 rounded-[2.5rem] text-white shadow-2xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                <h3 className="flex items-center gap-3 text-lg font-black mb-6 uppercase tracking-tight relative z-10">
+                  <Gavel className="text-[#FBBF24]" size={22} /> Thưởng & Phạt
+                </h3>
+                <div className="space-y-4 relative z-10">
+                  <div className="p-4 bg-white/10 rounded-2xl border border-white/10">
+                    <p className="font-black text-[10px] uppercase text-[#FBBF24] tracking-widest flex items-center gap-2 mb-2">
+                      <Coffee size={14} /> Đặc quyền thưởng
+                    </p>
+                    <p className="text-xs font-medium leading-relaxed opacity-90">
+                      Hoàn thành xuất sắc nhiệm vụ sẽ được 1 tràng vỗ tay của cả
+                      nhóm
+                    </p>
+                  </div>
+                  <div className="p-4 bg-black/10 rounded-2xl border border-white/5">
+                    <p className="font-black text-[10px] uppercase text-red-300 tracking-widest flex items-center gap-2 mb-2">
+                      <AlertCircle size={14} /> Quy tắc kỷ luật
+                    </p>
+                    <p className="text-xs font-medium leading-relaxed opacity-90">
+                      Chậm deadline hoặc thiếu tích cực sẽ bị trừ điểm đánh giá
+                      hoặc khiển trách.
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 bg-black/10 rounded-2xl border border-white/5">
-                  <p className="font-black text-[10px] uppercase text-red-300 tracking-widest flex items-center gap-2 mb-2">
-                    <AlertCircle size={14} /> Quy tắc kỷ luật
-                  </p>
-                  <p className="text-xs font-medium leading-relaxed opacity-90">
-                    Chậm deadline hoặc thiếu tích cực sẽ bị trừ điểm đánh giá
-                    hoặc khiển trách.
-                  </p>
-                </div>
-              </div>
-            </section>
+              </section>
+            </ScrollReveal>
           </div>
         </div>
       </div>

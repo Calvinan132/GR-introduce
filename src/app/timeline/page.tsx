@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import timelineData from "../data/timelineData.json";
+import { ScrollReveal } from "../components";
 import {
   CheckCircle2,
   Clock,
@@ -25,7 +26,10 @@ const TimelineItem = ({ item, isExpanded, onToggle, isOdd }: any) => {
   };
 
   return (
-    <div
+    <ScrollReveal
+      animation={isOdd ? "fade-left" : "fade-right"}
+      duration={800}
+      threshold={0.02}
       className={`relative flex items-center justify-between md:justify-normal ${isOdd ? "md:flex-row-reverse" : ""} group`}
     >
       {/* 1. Điểm mốc trên đường kẻ */}
@@ -71,7 +75,7 @@ const TimelineItem = ({ item, isExpanded, onToggle, isOdd }: any) => {
           </ul>
         </div>
       </div>
-    </div>
+    </ScrollReveal>
   );
 };
 
@@ -89,15 +93,17 @@ const TimelinePage = () => {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <div className="max-w-5xl mx-auto px-4 py-20">
         {/* HEADER */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-black text-primary mb-4 tracking-tighter uppercase">
-            Lộ Trình <span className="text-foreground">Phát Triển</span>
-          </h2>
-          <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-6" />
-          <p className="text-foreground/50 font-bold uppercase tracking-widest text-xs">
-            Chi tiết tiến độ thực hiện dự án theo từng tuần
-          </p>
-        </div>
+        <ScrollReveal animation="fade-down" duration={800}>
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-primary mb-4 tracking-tighter uppercase">
+              Lộ Trình <span className="text-foreground">Phát Triển</span>
+            </h2>
+            <div className="w-20 h-1.5 bg-primary mx-auto rounded-full mb-6" />
+            <p className="text-foreground/50 font-bold uppercase tracking-widest text-xs">
+              Chi tiết tiến độ thực hiện dự án theo từng tuần
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* TIMELINE CONTAINER */}
         <div className="relative">
@@ -120,14 +126,17 @@ const TimelinePage = () => {
         </div>
 
         {/* FOOTER TIMELINE */}
-        <div className="mt-24 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary text-primary font-black text-[10px] uppercase tracking-widest">
-            <Flag size={14} /> Điểm kết thúc dự án
+        <ScrollReveal animation="fade-up" duration={800} delay={100}>
+          <div className="mt-24 text-center">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-primary/5 border border-primary text-primary font-black text-[10px] uppercase tracking-widest">
+              <Flag size={14} /> Điểm kết thúc dự án
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );
 };
 
 export default TimelinePage;
+
